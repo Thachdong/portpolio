@@ -43,6 +43,7 @@
     "node_modules",
     "jest.config.ts",
     "**/*.spec.ts",
-    "**/*.test.ts"
+    "**/*.test.ts",
+    "../../libs/base-ui/src/server.ts"
   ]
 }

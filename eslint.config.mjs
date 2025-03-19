@@ -24,6 +24,18 @@ export default [
               sourceTag: '*',
               onlyDependOnLibsWithTags: ['*'],
             },
+            {
+              sourceTag: 'scope:blog-app',
+              onlyDependOnLibsWithTags: ['scope:base-ui', "scope:blog-app"],
+            },
+            {
+              sourceTag: 'scope:blog_admin-app',
+              onlyDependOnLibsWithTags: ['scope:base-ui', 'scope:blog-admin-ui'],
+            },
+            {
+              sourceTag: 'scope:portpolio-app',
+              onlyDependOnLibsWithTags: ['scope:base-ui', 'scope:portpolio-ui'],
+            },
           ],
         },
       ],

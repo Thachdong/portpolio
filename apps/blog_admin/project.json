@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/blog_admin",
   "projectType": "application",
-  "tags": [],
+  "tags": ["scope:blog_admin-app"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
