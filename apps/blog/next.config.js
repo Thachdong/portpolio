@@ -12,27 +12,7 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
-  assetPrefix: '/portpolio',
-  async rewrites() {
-    return [
-      {
-        source: '/blog',
-        destination: 'http://localhost:3001',
-      },
-      {
-        source: '/blog/_next/:path*',
-        destination: 'http://localhost:3001/_next/:path*',
-      },
-      {
-        source: '/blog_admin',
-        destination: 'http://localhost:3002',
-      },
-      {
-        source: '/blog_admin/_next/:path*',
-        destination: 'http://localhost:3002/_next/:path*'
-      }
-    ];
-  },
+  assetPrefix: "/blog",
 };
 
 const plugins = [

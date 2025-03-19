@@ -14,12 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "@my-portpolio/portpolio-ui": ["packages/portpolio-ui/src/index.ts"],
-      "@my-portpolio/portpolio-ui/server": [
-        "packages/portpolio-ui/src/server.ts"
-      ]
-    }
+    "paths": {}
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -96,6 +96,10 @@
       ],
       "dependsOn": ["^build"],
       "cache": true
+    },
+    "dev": {
+      "inputs": ["default"],
+      "cache": true
     }
   },
   "generators": {
