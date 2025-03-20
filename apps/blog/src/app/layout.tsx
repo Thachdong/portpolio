@@ -12,7 +12,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <section className='max-w-[1366px] mx-auto'>
+          {children}
+        </section>
+      </body>
     </html>
   );
 }

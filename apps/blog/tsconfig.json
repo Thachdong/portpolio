@@ -43,6 +43,9 @@
     "node_modules",
     "jest.config.ts",
     "**/*.spec.ts",
-    "**/*.test.ts"
-  ]
+    "**/*.test.ts",
+    "../../libs/base-ui/src/server.ts",
+    "../../libs/blog-ui/src/server.ts",
+    "../../libs/portpolio-ui/src/server.ts"
+  ],
 }

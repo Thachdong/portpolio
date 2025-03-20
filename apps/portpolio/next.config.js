@@ -17,7 +17,7 @@ const nextConfig = {
     return [
       {
         source: '/blog',
-        destination: 'http://localhost:3001',
+        destination: 'http://localhost:3001/blog',
       },
       {
         source: '/blog/_next/:path*',
