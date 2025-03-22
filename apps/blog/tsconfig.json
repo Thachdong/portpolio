@@ -38,7 +38,7 @@
     "../../dist/apps/blog/.next/types/**/*.ts",
     "next-env.d.ts",
     ".next/types/**/*.ts"
-  ],
+, "src/app/blog/[blogId]/page.mdx", "src/app/page.mdx"  ],
   "exclude": [
     "node_modules",
     "jest.config.ts",
@@ -46,6 +46,6 @@
     "**/*.test.ts",
     "../../libs/base-ui/src/server.ts",
     "../../libs/blog-ui/src/server.ts",
-    "../../libs/portpolio-ui/src/server.ts"
+    "../../libs/portfolio-ui/src/server.ts"
   ],
 }
