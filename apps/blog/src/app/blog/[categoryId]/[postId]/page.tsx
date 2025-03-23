@@ -26,7 +26,7 @@ export default async function PostDetailPage({
         <PostComments />
       </div>
 
-      <SameCategoryPosts />
+      <SameCategoryPosts group='' category='' />
     </div>
   );
 }
