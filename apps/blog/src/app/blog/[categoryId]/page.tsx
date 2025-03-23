@@ -1,5 +1,5 @@
+import { Breadcrumb } from '@my-portpolio/blog-ui';
 import { PostCard } from 'libs/blog-ui/src/molecules/post-card';
-import Link from 'next/link';
 
 type TCategoryDetailProps = {
   params: {
@@ -20,8 +20,6 @@ for (let i = 0; i < 20; i++) {
 }
 
 const CLASSNAMES = {
-  breadcrumb: 'py-4',
-  disabledBreadcrumb: 'text-gray-500',
   list: 'grid grid-cols-4 gap-4 mb-8',
 };
 
@@ -30,10 +28,12 @@ export default async function CategoryDetailPage({
 }: Readonly<TCategoryDetailProps>) {
   return (
     <div>
-      <div className={CLASSNAMES.breadcrumb}>
-        <Link href={`/blog#${categoryId}`}>FUNDAMENTAILS</Link> /{' '}
-        <span className={CLASSNAMES.disabledBreadcrumb}>CATEGORY 1</span>
-      </div>
+      <Breadcrumb
+        items={[
+          { title: 'FUNDAMENTAILS', href: `/blog#${categoryId}` },
+          { title: 'CATEGORY 1' },
+        ]}
+      />
 
       <ul className={CLASSNAMES.list}>
         {MOCK_POSTS.map((post) => (

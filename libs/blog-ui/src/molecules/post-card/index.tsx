@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 type TPostCardProps = {
@@ -16,8 +17,10 @@ const CLASSNAMES = {
 export const PostCard: React.FC<Readonly<TPostCardProps>> = ({ ...post }) => {
   return (
     <li className={CLASSNAMES.card} key={post.id}>
-      <img src={post.displayImage} alt={post.title} />
-      <p className={CLASSNAMES.title}>{post.title}</p>
+      <Link href={`/blog/${post.group}/${post.category}`}>
+        <img src={post.displayImage} alt={post.title} />
+        <p className={CLASSNAMES.title}>{post.title}</p>
+      </Link>
     </li>
   );
 };
