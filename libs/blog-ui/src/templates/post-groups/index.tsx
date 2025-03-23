@@ -26,7 +26,7 @@ for (let i = 0; i < 5; i++) {
   MOCK_DATA.push({
     id: 'group-' + i,
     name: 'Group ' + i,
-    category: 'Category ' + i,
+    category: 'Category-' + i,
     posts: MOCK_POSTS,
   });
 }
@@ -39,10 +39,11 @@ export const PostGroup: React.FC<Readonly<TPostGroupProps>> = () => {
   return (
     <div
       className={CLASSNAMES.container}
-      style={{ height: 'calc(100vh - 74px)' }}
+      style={{ height: 'calc(100vh - 74px)', scrollBehavior: 'smooth' }}
     >
       {MOCK_DATA.map((data) => (
         <PostList
+          key={data.id}
           group={data.name}
           category={data.category}
           posts={data.posts}

@@ -8,134 +8,25 @@ const CLASSNAMES = {
 
 const MOCK_CATEGORY = [
   {
-    id: 'react',
+    id: 'Category-0',
     name: 'react',
-    posts: [
-      {
-        id: 'post-1',
-        title: 'Cấu trúc HTML5: Cách tạo template HTML5 đầu tiên',
-      },
-      {
-        id: 'post-2',
-        title: 'post title 2',
-      },
-      {
-        id: 'post-3',
-        title: 'post title 3',
-      },
-      {
-        id: 'post-4',
-        title: 'post title 4',
-      },
-      {
-        id: 'post-5',
-        title: 'post title 5',
-      },
-    ],
   },
   {
-    id: 'vue',
+    id: 'Category-1',
     name: 'vue',
-    posts: [
-      {
-        id: 'post-1',
-        title: 'post title 1',
-      },
-      {
-        id: 'post-2',
-        title: 'post title 2',
-      },
-      {
-        id: 'post-3',
-        title: 'post title 3',
-      },
-      {
-        id: 'post-4',
-        title: 'post title 4',
-      },
-      {
-        id: 'post-5',
-        title: 'post title 5',
-      },
-    ],
   },
   {
-    id: 'angular',
+    id: 'Category-2',
     name: 'angular',
-    posts: [
-      {
-        id: 'post-1',
-        title: 'post title 1',
-      },
-      {
-        id: 'post-2',
-        title: 'post title 2',
-      },
-      {
-        id: 'post-3',
-        title: 'post title 3',
-      },
-      {
-        id: 'post-4',
-        title: 'post title 4',
-      },
-      {
-        id: 'post-5',
-        title: 'post title 5',
-      },
-    ],
+
   },
   {
-    id: 'next',
+    id: 'Category-3',
     name: 'next',
-    posts: [
-      {
-        id: 'post-1',
-        title: 'post title 1',
-      },
-      {
-        id: 'post-2',
-        title: 'post title 2',
-      },
-      {
-        id: 'post-3',
-        title: 'post title 3',
-      },
-      {
-        id: 'post-4',
-        title: 'post title 4',
-      },
-      {
-        id: 'post-5',
-        title: 'post title 5',
-      },
-    ],
   },
   {
-    id: 'vanilla-javascript',
+    id: 'Category-4',
     name: 'Vanilla Javascript',
-    posts: [
-      {
-        id: 'post-1',
-        title: 'post title 1',
-      },
-      {
-        id: 'post-2',
-        title: 'post title 2',
-      },
-      {
-        id: 'post-3',
-        title: 'post title 3',
-      },
-      {
-        id: 'post-4',
-        title: 'post title 4',
-      },
-      {
-        id: 'post-5',
-        title: 'post title 5',
-      },
-    ],
   },
 ];
 
