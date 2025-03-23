@@ -1,4 +1,5 @@
 import './global.css';
+import { BlogHeader } from "@my-portpolio/blog-ui"
 
 export const metadata = {
   title: 'Welcome to blog',
@@ -12,8 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <section className='max-w-[1366px] mx-auto'>
+      <body className="grid grid-rows-[74px,1fr] min-h-screen">
+        <BlogHeader />
+        <section className="w-full max-w-[1366px] mx-auto">
           {children}
         </section>
       </body>
