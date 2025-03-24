@@ -24,13 +24,13 @@ const nextConfig = {
         destination: 'http://localhost:3001/_next/:path*',
       },
       {
-        source: '/blog_admin',
-        destination: 'http://localhost:3002',
+        source: '/blog_admin/:path*',
+        destination: 'http://localhost:3002/blog_admin/:path*',
       },
       {
         source: '/blog_admin/_next/:path*',
-        destination: 'http://localhost:3002/_next/:path*'
-      }
+        destination: 'http://localhost:3002/_next/:path*',
+      },
     ];
   },
 };

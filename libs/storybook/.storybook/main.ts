@@ -21,6 +21,13 @@ const config: StorybookConfig = {
           ...config.resolve?.alias,
         },
       },
+      define: {
+        'process.env': {
+          'process.env': {
+            NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+          },
+        }, // Polyfill for process
+      },
     });
   },
 };
