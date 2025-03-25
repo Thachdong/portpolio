@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/portpolio-ui/src",
   "projectType": "library",
-  "tags": ["scope:portpolio-ui", "feature:ui"],
+  "tags": ["scope:portpolio-ui"],
   "// targets": "to see all targets run: nx show project portpolio-ui --web",
   "targets": {}
 }

@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <section>
+        <section className="grid grid-cols-[auto_1fr]">
           <Sidebar />
           {children}
         </section>

@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/blog-ui/src",
   "projectType": "library",
-  "tags": ["scope:blog-app"],
+  "tags": ["scope:blog-ui"],
   "// targets": "to see all targets run: nx show project blog-ui --web",
   "targets": {}
 }

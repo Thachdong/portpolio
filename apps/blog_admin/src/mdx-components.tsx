@@ -1,4 +1,5 @@
-import { markdownComponents } from '@my-portpolio/utilities';
+/* eslint-disable @nx/enforce-module-boundaries */
+import { markdownComponents } from '../../../libs/utilities/src/markdown-components.utilities';
 
 declare global {
   type MDXProvidedComponents = typeof markdownComponents;

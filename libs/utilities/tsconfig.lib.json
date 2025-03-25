@@ -6,8 +6,7 @@
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts",
-      "next",
-      "@nx/next/typings/image.d.ts"
+      "vite/client"
     ]
   },
   "exclude": [
@@ -31,7 +30,6 @@
     "src/**/*.spec.js",
     "src/**/*.test.jsx",
     "src/**/*.spec.jsx"
-    // Removed non-existent file paths
   ],
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
 }

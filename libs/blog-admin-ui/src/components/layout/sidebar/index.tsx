@@ -13,7 +13,7 @@ const MENU: TMenuItem[] = [
   { name: 'Posts', path: '/posts' },
   { name: 'Feedbacks', path: '/feedbacks' },
   { name: 'Chat', path: '/chat' },
-  { name: 'Users', path: '/user' },
+  { name: 'Users', path: '/users' },
 ];
 
 const CLASSNAMES = {
