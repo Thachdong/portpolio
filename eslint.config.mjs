@@ -26,11 +26,15 @@ export default [
             },
             {
               sourceTag: 'scope:blog-app',
-              onlyDependOnLibsWithTags: ['scope:base-ui', "scope:blog-app"],
+              onlyDependOnLibsWithTags: ['scope:base-ui', 'scope:utilities'],
             },
             {
               sourceTag: 'scope:blog_admin-app',
-              onlyDependOnLibsWithTags: ['scope:base-ui', 'scope:blog-admin-ui'],
+              onlyDependOnLibsWithTags: [
+                'scope:base-ui',
+                'scope:blog-admin-ui',
+                'scope:utilities',
+              ],
             },
             {
               sourceTag: 'scope:portpolio-app',

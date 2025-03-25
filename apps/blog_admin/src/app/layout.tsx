@@ -1,4 +1,5 @@
 import './global.css';
+import { Sidebar } from '@my-portpolio/blog-admin-ui';
 
 export const metadata = {
   title: 'Welcome to blog_admin',
@@ -12,7 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <section className="grid grid-cols-[auto_1fr]">
+          <Sidebar />
+          {children}
+        </section>
+      </body>
     </html>
   );
 }

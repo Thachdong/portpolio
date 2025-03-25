@@ -24,7 +24,10 @@
       "@my-portpolio/blog-ui": ["libs/blog-ui/src/index.ts"],
       "@my-portpolio/blog-ui/server": ["libs/blog-ui/src/server.ts"],
       "@my-portpolio/portpolio-ui": ["libs/portpolio-ui/src/index.ts"],
-      "@my-portpolio/portpolio-ui/server": ["libs/portpolio-ui/src/server.ts"]
+      "@my-portpolio/portpolio-ui/server": ["libs/portpolio-ui/src/server.ts"],
+      "@my-portpolio/storybook": ["libs/storybook/src/index.ts"],
+      "@my-portpolio/storybook/server": ["libs/storybook/src/server.ts"],
+      "@my-portpolio/utilities": ["libs/utilities/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

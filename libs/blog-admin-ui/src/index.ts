@@ -1,3 +1,2 @@
-// Use this file to export React client components (e.g. those with 'use client' directive) or other non-server utilities
-
-export * from './lib/blog-admin-ui';
+export * from './components/layout';
+export * from './components/create-post';
