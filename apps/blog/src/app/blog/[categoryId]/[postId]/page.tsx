@@ -1,8 +1,4 @@
-import {
-  PostComments,
-  PostDetail,
-  SameCategoryPosts,
-} from '@my-portpolio/blog-ui';
+import { PostComments, PostDetail, SameCategoryPosts } from '@/blog-ui';
 
 type TPostDetailProps = {
   params: {
@@ -26,7 +22,7 @@ export default async function PostDetailPage({
         <PostComments />
       </div>
 
-      <SameCategoryPosts group='' category='' />
+      <SameCategoryPosts group="" category="" />
     </div>
   );
 }

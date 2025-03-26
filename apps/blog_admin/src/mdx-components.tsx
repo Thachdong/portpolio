@@ -1,5 +1,4 @@
-/* eslint-disable @nx/enforce-module-boundaries */
-import { markdownComponents } from '../../../libs/utilities/src/markdown-components.utilities';
+import { markdownComponents } from '@/utility';
 
 declare global {
   type MDXProvidedComponents = typeof markdownComponents;

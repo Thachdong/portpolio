@@ -5,16 +5,14 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "types": ["vite/client", "vitest"]
+    "composite": true,
+    "declaration": true
   },
-  "files": [],
-  "include": [],
+  // "files": ["./index.ts"], // Removed to avoid build errors
+  "include": ["./**/*.ts"], // Optionally include all TypeScript files in the directory
   "references": [
     {
       "path": "./tsconfig.lib.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
     }
   ],
   "extends": "../../tsconfig.base.json"

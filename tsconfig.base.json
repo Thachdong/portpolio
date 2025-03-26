@@ -15,19 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-portpolio/base-ui": ["libs/base-ui/src/index.ts"],
-      "@my-portpolio/base-ui/server": ["libs/base-ui/src/server.ts"],
-      "@my-portpolio/blog-admin-ui": ["libs/blog-admin-ui/src/index.ts"],
-      "@my-portpolio/blog-admin-ui/server": [
-        "libs/blog-admin-ui/src/server.ts"
-      ],
-      "@my-portpolio/blog-ui": ["libs/blog-ui/src/index.ts"],
-      "@my-portpolio/blog-ui/server": ["libs/blog-ui/src/server.ts"],
-      "@my-portpolio/portpolio-ui": ["libs/portpolio-ui/src/index.ts"],
-      "@my-portpolio/portpolio-ui/server": ["libs/portpolio-ui/src/server.ts"],
-      "@my-portpolio/storybook": ["libs/storybook/src/index.ts"],
-      "@my-portpolio/storybook/server": ["libs/storybook/src/server.ts"],
-      "@my-portpolio/utilities": ["libs/utilities/src/index.ts"]
+      "@/base-ui": ["libs/base-ui/src/index.ts"],
+      "@/blog-admin-ui": ["libs/blog-admin-ui/src/index.ts"],
+      "@/blog-ui": ["libs/blog-ui/src/index.ts"],
+      "@/portpolio-ui": ["libs/portpolio-ui/src/index.ts"],
+      "@/storybook": ["libs/storybook/src/.storybook/main.ts"],
+      "@/utility": ["libs/utility/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

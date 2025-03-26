@@ -22,24 +22,24 @@
     ],
     "types": ["jest", "node"]
   },
-  "include": [
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
-    "pages/**/*.ts",
-    "pages/**/*.tsx",
-    "components/**/*.ts",
-    "components/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "jest.config.ts",
-    "**/*.spec.ts",
-    "**/*.test.ts",
-    "../../libs/base-ui/src/server.ts",
-    "../../libs/blog-admin-ui/src/server.ts",
-    "../../libs/blog-ui/src/server.ts",
-    "../../libs/portpolio-ui/src/server.ts",
-    "../../libs/storybook/src/index.ts",
-    "../../libs/storybook/src/server.ts"
+  "references": [
+    {
+      "path": "../../libs/base-ui"
+    },
+    {
+      "path": "../../libs/blog-admin-ui"
+    },
+    {
+      "path": "../../libs/blog-ui"
+    },
+    {
+      "path": "../../libs/portpolio-ui"
+    },
+    {
+      "path": "../../libs/storybook"
+    },
+    {
+      "path": "../../libs/utility"
+    }
   ]
 }
