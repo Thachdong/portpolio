@@ -6,7 +6,7 @@ export default {
   tags: ['autodocs'],
   args: {
     children: 'Button',
-  }
+  },
 };
 
-export const Default = {}
+export const Default = {};

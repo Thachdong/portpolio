@@ -1,5 +1,5 @@
 import './global.css';
-import { BlogHeader } from "@my-portpolio/blog-ui"
+import { BlogHeader } from '@my-portpolio/blog-ui';
 
 export const metadata = {
   title: 'Welcome to blog',

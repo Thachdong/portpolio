@@ -1,4 +1,4 @@
-import { PostGroup, SidebarMenu } from '@my-portpolio/blog-ui';
+import { PostGroup, SidebarMenu } from '@/blog-ui';
 
 export default async function BlogPage() {
   return (

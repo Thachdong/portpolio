@@ -15,8 +15,8 @@
     "dev": {
       "executor": "@nx/next:server",
       "options": {
-      "buildTarget": "blog_admin:build",
-      "port": 3002
+        "buildTarget": "blog_admin:build",
+        "port": 3002
       }
     }
   }

@@ -1,4 +1,4 @@
-import { Header } from '@my-portpolio/portpolio-ui'
+import { Header } from '@/portpolio-ui';
 
 export default function Index() {
   return (

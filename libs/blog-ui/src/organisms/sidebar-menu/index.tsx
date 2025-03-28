@@ -18,7 +18,6 @@ const MOCK_CATEGORY = [
   {
     id: 'Category-2',
     name: 'angular',
-
   },
   {
     id: 'Category-3',
@@ -39,7 +38,10 @@ const MOCK_CATEGORY_TAGS = [
 
 export const SidebarMenu: React.FC<Readonly<TSidebarMenuProps>> = () => {
   return (
-    <ul className={CLASSNAMES.container} style={{ height: "calc(100vh - 74px)"}}>
+    <ul
+      className={CLASSNAMES.container}
+      style={{ height: 'calc(100vh - 74px)' }}
+    >
       {MOCK_CATEGORY_TAGS.map((tag) => (
         <li className="mb-4" key={tag}>
           <span className="inline-block font-bold border-b-4 border-[#2f6e91]">

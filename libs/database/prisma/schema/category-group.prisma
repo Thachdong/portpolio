@@ -1,0 +1,14 @@
+model CategoryGroup {
+    id          String  @id @default(cuid())
+    name        String  @unique
+    description String?
+    image       String?
+
+    // Relationships
+    authorId   String
+    author     User       @relation(fields: [authorId], references: [id])
+    categories Category[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
