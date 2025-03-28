@@ -11,9 +11,9 @@ export const PostDetail: React.FC<Readonly<TPostDetailProps>> = ({
     <div>
       <Breadcrumb
         items={[
-          { title: 'FUNDAMENTAILS', href: `/blog#${'categoryId'}` },
-          { title: 'CATEGORY', href: `/blog/Category` },
-          { title: 'Post' + postId },
+          { title: 'FUNDAMENTAILS', href: `/blog#${'categoryId'}`, id: 'fundamentals' },
+          { title: 'CATEGORY', href: `/blog/Category`, id: 'category' },
+          { title: 'Post' + postId, id: 'post' },
         ]}
       />
 

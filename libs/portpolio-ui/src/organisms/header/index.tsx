@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
       </li>
       <li className="text-gray-300">|</li>
       <li>
-        <a className="py-2 inline-block font-medium" href={'/blog_admin'}>
+        <a className="py-2 inline-block font-medium" href={'/blog_admin/create-post'}>
           Blog admin
         </a>
       </li>

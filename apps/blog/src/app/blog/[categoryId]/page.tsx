@@ -1,5 +1,4 @@
-import { Breadcrumb } from '@/blog-ui';
-import { PostCard } from 'libs/blog-ui/src/molecules/post-card';
+import { Breadcrumb, PostCard } from '@/blog-ui';
 
 type TCategoryDetailProps = {
   params: {
@@ -30,8 +29,8 @@ export default async function CategoryDetailPage({
     <div>
       <Breadcrumb
         items={[
-          { title: 'FUNDAMENTAILS', href: `/blog#${categoryId}` },
-          { title: 'CATEGORY 1' },
+          { title: 'FUNDAMENTAILS', href: `/blog#${categoryId}`, id: 'fundamentals' },
+          { title: 'CATEGORY 1', id: 'category-1' },
         ]}
       />
 
