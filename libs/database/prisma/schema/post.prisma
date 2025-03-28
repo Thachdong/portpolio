@@ -1,0 +1,21 @@
+enum EPostRole {
+    IDLE
+    REJECTED
+    APPROVED
+}
+
+model Post {
+    id        String   @id @default(cuid())
+    filePath  String
+    status    EPostRole @default(IDLE)
+
+    // Relationships
+    authorId String
+    author   User @relation(fields: [authorId], references: [id])
+    categoryId String
+    category   Category @relation(fields: [categoryId], references: [id])
+    comments Comment[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}

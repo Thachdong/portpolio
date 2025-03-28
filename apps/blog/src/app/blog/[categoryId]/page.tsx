@@ -1,4 +1,4 @@
-import { Breadcrumb } from '@my-portpolio/blog-ui';
+import { Breadcrumb } from '@/blog-ui';
 import { PostCard } from 'libs/blog-ui/src/molecules/post-card';
 
 type TCategoryDetailProps = {

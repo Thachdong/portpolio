@@ -1,1 +1,1 @@
-export * from "./organisms/header"
+export * from './organisms/header';

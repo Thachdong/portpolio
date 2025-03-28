@@ -1,1 +1,1 @@
-export * from "./post-groups"
+export * from './post-groups';

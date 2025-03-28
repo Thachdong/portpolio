@@ -27,7 +27,9 @@ export const PostList: React.FC<Readonly<TPostListProps>> = ({
   return (
     <>
       <div className={CLASSNAMES.header} id={category}>
-        <h4 id={group} className={CLASSNAMES.headerText}>{group} / {category}</h4>
+        <h4 id={group} className={CLASSNAMES.headerText}>
+          {group} / {category}
+        </h4>
         <Link className={CLASSNAMES.headerLink} href={`/blog/${category}`}>
           View All
         </Link>

@@ -26,19 +26,27 @@ export default [
             },
             {
               sourceTag: 'scope:blog-app',
-              onlyDependOnLibsWithTags: ['scope:base-ui', 'scope:utilities'],
+              onlyDependOnLibsWithTags: [
+                'feature:base-ui',
+                'feature:utility',
+                'feature:blog-ui',
+              ],
             },
             {
               sourceTag: 'scope:blog_admin-app',
               onlyDependOnLibsWithTags: [
-                'scope:base-ui',
-                'scope:blog-admin-ui',
-                'scope:utilities',
+                'feature:base-ui',
+                'feature:utility',
+                'feature:blog-admin-ui',
               ],
             },
             {
               sourceTag: 'scope:portpolio-app',
-              onlyDependOnLibsWithTags: ['scope:base-ui', 'scope:portpolio-ui'],
+              onlyDependOnLibsWithTags: [
+                'feature:base-ui',
+                'feature:utility',
+                'feature:portpolio-ui',
+              ],
             },
           ],
         },
@@ -56,7 +64,6 @@ export default [
       '**/*.cjs',
       '**/*.mjs',
     ],
-    // Override or add rules here
     rules: {},
   },
 ];

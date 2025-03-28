@@ -1,5 +1,5 @@
 import './global.css';
-import { Sidebar } from '@my-portpolio/blog-admin-ui';
+import { Sidebar } from '@/blog-admin-ui';
 
 export const metadata = {
   title: 'Welcome to blog_admin',
