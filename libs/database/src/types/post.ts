@@ -14,3 +14,23 @@ export type TFrontMatter = {
   status: string;
   publishedAt: string;
 };
+
+export type TAdminPost = {
+  id: string;
+  filePath: string;
+  status: EPostRole;
+  author: {
+    id: string;
+    name: string;
+  };
+  category: {
+    id: string;
+    name: string;
+    categoryGroup: {
+      id: string;
+      name: string;
+    };
+  };
+  createdAt: Date;
+  updatedAt: Date;
+};
