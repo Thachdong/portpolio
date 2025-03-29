@@ -1,15 +1,40 @@
 import { TAdminPost } from '@/database';
+import { IPaginationResponse } from '@/utility';
 import Link from 'next/link';
 import React from 'react';
+import { Pagination } from '../pagination';
 
 type TPostListProps = {
-  posts: TAdminPost[];
+  pagination: IPaginationResponse<TAdminPost>;
 };
 
-export const PostsList: React.FC<TPostListProps> = ({ posts }) => {
+export const PostsList: React.FC<TPostListProps> = ({ pagination }) => {
+  const { data: posts, total, page, limit } = pagination;
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Posts List</h1>
+
+      <div className="flex justify-between items-center mb-4 border border-gray-200 rounded-lg p-4">
+        <div className="border-r border-gray-200 pr-4">
+          <p className="text-gray-600">
+            Total: <span className="font-semibold">{total}</span>
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <Pagination
+            total={total}
+            page={page}
+            limit={limit}
+            path="/blog_admin/posts"
+          />
+        </div>
+        <div className="border-l border-gray-200 pl-4">
+          <p className="text-gray-600">
+            Items per page: <span className="font-semibold">{limit}</span>
+          </p>
+        </div>
+      </div>
+
       <table className="w-full border-collapse border">
         <thead>
           <tr>
@@ -26,7 +51,7 @@ export const PostsList: React.FC<TPostListProps> = ({ posts }) => {
         <tbody>
           {posts.map((post) => (
             <tr key={post.id}>
-              <td className="border p-2">"post.title"</td>
+              <td className="border p-2">{post.title}</td>
               <td className="border p-2">{post.status}</td>
               <td className="border p-2">{post.author.name}</td>
               <td className="border p-2">{post.category.categoryGroup.name}</td>

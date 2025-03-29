@@ -6,8 +6,9 @@ enum EPostRole {
 
 model Post {
     id        String   @id @default(cuid())
-    filePath  String
+    filename  String
     status    EPostRole @default(IDLE)
+    title     String
 
     // Relationships
     authorId String

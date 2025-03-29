@@ -41,7 +41,8 @@ async function createPost(mdFile: File): Promise<void> {
 
   // create post in database
   const posts: TCreatePost = {
-    filePath: filename,
+    filename,
+    title: parsedFrontMatter.data.title,
     authorId: parsedFrontMatter.data.authorId,
     categoryId: parsedFrontMatter.data.categoryId,
     status: EPostRole.IDLE,

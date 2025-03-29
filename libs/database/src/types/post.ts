@@ -1,7 +1,8 @@
 import { EPostRole } from '@prisma/client';
 
 export type TCreatePost = {
-  filePath: string;
+  filename: string;
+  title: string;
   authorId: string;
   categoryId: string;
   status: EPostRole;
@@ -17,7 +18,8 @@ export type TFrontMatter = {
 
 export type TAdminPost = {
   id: string;
-  filePath: string;
+  filename: string;
+  title: string;
   status: EPostRole;
   author: {
     id: string;

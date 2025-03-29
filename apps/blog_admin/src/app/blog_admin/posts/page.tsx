@@ -1,8 +1,14 @@
 import { PostsList } from '@/blog-admin-ui';
 import { getPostsPaginatedService } from '@/database';
-import { PAGE_SIZE } from '@/utility';
 
-export default async function PostsPage() {
-  const posts = await getPostsPaginatedService(1, PAGE_SIZE);
-  return <PostsList posts={posts} />;
+export default async function PostsPage({
+  searchParams,
+}: {
+  searchParams: { page?: string };
+}) {
+  const page = searchParams.page ? parseInt(searchParams.page) : 1;
+
+  const pagination = await getPostsPaginatedService({ page });
+
+  return <PostsList pagination={pagination} />;
 }

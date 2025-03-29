@@ -6,4 +6,5 @@ export const frontMatterSchema = z.object({
   authorId: z.string().nonempty(),
   status: z.string().nonempty(),
   // publishedAt: z.string().nonempty(),
+  title: z.string().nonempty(),
 });
