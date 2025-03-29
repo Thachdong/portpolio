@@ -1,23 +1,46 @@
+'use client';
 import { Breadcrumb } from '../../molecules';
+import { markdownComponents } from '@/utility';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 type TPostDetailProps = {
+  content: MDXRemoteSerializeResult;
+  categoryId: string;
+  categoryGroupId: string;
+  categoryName: string;
+  categoryGroupName: string;
   postId: string;
+  postTitle: string;
 };
 
 export const PostDetail: React.FC<Readonly<TPostDetailProps>> = ({
+  content,
+  categoryId,
+  categoryGroupId,
+  categoryName,
+  categoryGroupName,
   postId,
+  postTitle,
 }) => {
+  console.log(content);
   return (
     <div>
       <Breadcrumb
         items={[
-          { title: 'FUNDAMENTAILS', href: `/blog#${'categoryId'}`, id: 'fundamentals' },
-          { title: 'CATEGORY', href: `/blog/Category`, id: 'category' },
-          { title: 'Post' + postId, id: 'post' },
+          {
+            title: categoryGroupName,
+            href: `/blog#${categoryGroupId}`,
+            id: categoryGroupId,
+          },
+          { title: categoryName, href: `/blog/Category`, id: categoryId },
+          { title: postTitle, id: postId },
         ]}
       />
 
-      <div>Post Content</div>
+      <div>
+        <h1>{postTitle}</h1>
+        <MDXRemote {...content} components={markdownComponents} />
+      </div>
     </div>
   );
 };

@@ -35,8 +35,6 @@ async function createPost(mdFile: File): Promise<void> {
   // upload file to S3 with hash in filename
   const filename = `${new Date().getTime()}-${mdFile.name}`;
 
-  console.log('filename', filename);
-
   await uploadFile(mdFile, filename, ES3Folder.POSTS);
 
   // create post in database

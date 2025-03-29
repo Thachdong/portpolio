@@ -1,7 +1,7 @@
 'use server';
 import { EPostRole, Post } from '@prisma/client';
 import prisma from '../prisma';
-import { TAdminPost, TCreatePost } from '../types/post';
+import { TAdminPost, TCreatePost, TPostDetail } from '../types/post';
 import { IPagination, IPaginationResponse, PAGE_SIZE } from '@/utility';
 
 const postRepository = prisma.post;
@@ -38,10 +38,49 @@ export async function updatePostStatusService(
  * @param id - The id of the post to get
  * @returns The post
  */
-export async function getPostByIdService(id: string): Promise<Post | null> {
-  return postRepository.findUnique({
+export async function getPostByIdService(
+  id: string
+): Promise<TPostDetail | null> {
+  const data = await postRepository.findUnique({
     where: { id },
+    select: {
+      id: true,
+      filename: true,
+      title: true,
+      category: {
+        select: {
+          id: true,
+          name: true,
+          categoryGroup: {
+            select: {
+              id: true,
+              name: true,
+            },
+          },
+        },
+      },
+    },
   });
+
+  if (!data) {
+    return null;
+  }
+
+  const post = {
+    id: data.id,
+    filename: data.filename,
+    title: data.title,
+    category: {
+      id: data.category.id,
+      name: data.category.name,
+    },
+    categoryGroup: {
+      id: data.category.categoryGroup.id,
+      name: data.category.categoryGroup.name,
+    },
+  };
+
+  return post;
 }
 
 /**

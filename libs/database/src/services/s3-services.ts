@@ -1,5 +1,11 @@
 'use server';
-import { S3ClientConfig, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import { ES3Folder } from '@/utility';
+import {
+  S3ClientConfig,
+  PutObjectCommand,
+  S3Client,
+  GetObjectCommand,
+} from '@aws-sdk/client-s3';
 
 const s3ClientConfig: S3ClientConfig = {
   region: process.env.AWS_S3_REGION,
@@ -26,4 +32,19 @@ export async function uploadFile(
   });
 
   await s3Client.send(command);
+}
+
+export async function getMdFileContent(
+  filename: string
+): Promise<string | undefined> {
+  const command = new GetObjectCommand({
+    Bucket: process.env.AWS_S3_BUCKET_NAME,
+    Key: [ES3Folder.POSTS, filename].join('/'),
+  });
+
+  const response = await s3Client.send(command);
+
+  const content = await response.Body?.transformToString();
+
+  return content;
 }

@@ -36,3 +36,17 @@ export type TAdminPost = {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type TPostDetail = {
+  id: string;
+  filename: string;
+  title: string;
+  category: {
+    id: string;
+    name: string;
+  };
+  categoryGroup: {
+    id: string;
+    name: string;
+  };
+};
