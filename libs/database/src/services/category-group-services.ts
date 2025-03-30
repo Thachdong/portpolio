@@ -1,7 +1,28 @@
 import prisma from '../prisma';
-import { TCategoryGroupDetail } from '../types';
+import { TCategoryGroupDetail, TCategoryGroupWithCategories } from '../types';
 
 const postGroupRepository = prisma.categoryGroup;
+
+/**
+ * Get all category groups
+ * @returns The category groups
+ */
+export async function getAllCategoryGroupsService(): Promise<
+  TCategoryGroupWithCategories[]
+> {
+  return await postGroupRepository.findMany({
+    select: {
+      id: true,
+      name: true,
+      categories: {
+        select: {
+          id: true,
+          name: true,
+        },
+      },
+    },
+  });
+}
 
 /**
  * Get category group by id

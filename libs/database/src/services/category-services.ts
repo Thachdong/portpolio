@@ -31,3 +31,26 @@ export async function getCategoryByIdService(
     description: category.description || '',
   };
 }
+
+/**
+ * Get first 8 posts of a category
+ * @param id - The id of the category to get the posts from
+ * @returns The first 8 posts of the category
+ */
+export async function getFirst8PostsOfCategoryService(id: string) {
+  const category = await categoryRepository.findUnique({
+    where: { id },
+    include: {
+      posts: {
+        select: postSelectObject,
+        take: 8,
+      },
+    },
+  });
+
+  if (!category) {
+    return [];
+  }
+
+  return category.posts;
+}
