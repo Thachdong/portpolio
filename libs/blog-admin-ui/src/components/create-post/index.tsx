@@ -5,8 +5,11 @@ import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
 import { markdownComponents } from '@/utility';
 import { createPostAction } from '@/database';
+import { useRouter } from 'next/navigation';
 
 export const CreatePostForm: React.FC = () => {
+  const router = useRouter();
+
   const [mdxContent, setMdxContent] = useState<MDXRemoteSerializeResult | null>(
     null
   );
@@ -35,6 +38,8 @@ export const CreatePostForm: React.FC = () => {
     e.preventDefault();
     if (file) {
       await createPostAction(file);
+
+      router.push('/blog_admin/posts');
     }
   };
 

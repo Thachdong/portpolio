@@ -28,6 +28,7 @@ export type TAdminPost = {
   category: {
     id: string;
     name: string;
+    image: string | null;
     categoryGroup: {
       id: string;
       name: string;

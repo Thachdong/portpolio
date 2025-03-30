@@ -38,6 +38,7 @@
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "../utility/src/**/*.ts"
+    "../utility/src/**/*.ts",
+    "../database/src/**/*.ts"
   ]
 }

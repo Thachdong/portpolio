@@ -1,5 +1,10 @@
 import { Breadcrumb, PostComments, SameCategoryPosts } from '@/blog-ui';
-import { getPostByIdService, getMdFileContent, TFrontMatter } from '@/database';
+import {
+  getPostByIdService,
+  getMdFileContent,
+  TFrontMatter,
+  getPostsByCategoryIdService,
+} from '@/database';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import { markdownComponents } from '@/utility';
 
@@ -34,6 +39,12 @@ export default async function PostDetailPage({
   });
   // #endregion
 
+  // #region -- get same category posts
+  const sameCategoryPosts = await getPostsByCategoryIdService(
+    post?.category.id || ''
+  );
+  // #endregion
+
   return (
     <div className={CLASSNAMES.container}>
       <div className={CLASSNAMES.content}>
@@ -46,7 +57,7 @@ export default async function PostDetailPage({
             },
             {
               title: post?.category.name || '',
-              href: `/blog/${post?.category.id}`,
+              href: `/blog/${post?.categoryGroup.id}#${post?.category.id}`,
               id: post?.category.id || '',
             },
             { title: post?.title || '', id: postId },
@@ -68,8 +79,8 @@ export default async function PostDetailPage({
       </div>
 
       <SameCategoryPosts
-        group={post?.categoryGroup.id || ''}
         category={post?.category.id || ''}
+        posts={sameCategoryPosts}
       />
     </div>
   );

@@ -6,7 +6,7 @@ import { createServerAction } from './create-server-action';
 import { uploadFile } from '../services/s3-services';
 import { createPostService } from '../services/post-services';
 import { TCreatePost } from '../types/post';
-
+import { revalidatePath } from 'next/cache';
 /**
  * Create new post
  *
@@ -47,6 +47,8 @@ async function createPost(mdFile: File): Promise<void> {
   };
 
   await createPostService(posts);
+
+  revalidatePath('/blog_admin/posts');
 }
 
 export const createPostAction = createServerAction(createPost);

@@ -2,4 +2,4 @@ export enum ES3Folder {
   POSTS = 'posts',
 }
 
-export const PAGE_SIZE = 25;
+export const PAGE_SIZE = 10;

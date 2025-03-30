@@ -1,8 +1,9 @@
 'use server';
-import { EPostRole, Post } from '@prisma/client';
+import { CategoryGroup, EPostRole, Post } from '@prisma/client';
 import prisma from '../prisma';
 import { TAdminPost, TCreatePost, TPostDetail } from '../types/post';
 import { IPagination, IPaginationResponse, PAGE_SIZE } from '@/utility';
+import { postSelectObject } from '../selectors';
 
 const postRepository = prisma.post;
 
@@ -84,37 +85,6 @@ export async function getPostByIdService(
 }
 
 /**
- * Get all posts
- * @returns All posts
- */
-const postSelectObject = {
-  id: true,
-  filename: true,
-  title: true,
-  status: true,
-  author: {
-    select: {
-      id: true,
-      name: true,
-    },
-  },
-  category: {
-    select: {
-      id: true,
-      name: true,
-      categoryGroup: {
-        select: {
-          id: true,
-          name: true,
-        },
-      },
-    },
-  },
-  createdAt: true,
-  updatedAt: true,
-};
-
-/**
  * Get all posts with pagination
  * @param pagination - The pagination parameters
  * @returns The posts and the total number of posts
@@ -149,13 +119,14 @@ export async function getPostsPaginatedService(
  */
 export async function getPostsByCategoryIdService(
   categoryId: string
-): Promise<Post[]> {
+): Promise<TAdminPost[]> {
   return postRepository.findMany({
     where: {
       category: {
         id: categoryId,
       },
     },
+    select: postSelectObject,
   });
 }
 
@@ -202,4 +173,28 @@ export async function getPostByCategoryGroupAndPaginationService(
     page,
     limit,
   };
+}
+
+/**
+ * get category group by category id
+ * @param postId - The id of the category to get the category group from
+ * @returns The category group
+ */
+export async function getCategoryGroupByPostIdService(
+  postId: string
+): Promise<CategoryGroup | null> {
+  const post = await postRepository.findUnique({
+    where: {
+      id: postId,
+    },
+    include: {
+      category: {
+        include: {
+          categoryGroup: true,
+        },
+      },
+    },
+  });
+
+  return post?.category.categoryGroup || null;
 }

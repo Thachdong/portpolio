@@ -1,22 +1,11 @@
 import React from 'react';
 import { PostCard } from '../../molecules/post-card';
+import { TAdminPost } from '@/database';
 
 type TSameCategoryPostsProps = {
-  group: string;
   category: string;
+  posts: TAdminPost[];
 };
-
-type TPost = { id: string; title: string; displayImage: string };
-
-const MOCK_POSTS: TPost[] = [];
-
-for (let i = 0; i < 8; i++) {
-  MOCK_POSTS.push({
-    id: 'post-' + i,
-    title: 'Cấu trúc HTML5: Cách tạo template HTML5 đầu tiên - ' + i,
-    displayImage: 'https://scand.com/wp-content/uploads/2021/04/JavaScript.jpg',
-  });
-}
 
 const CLASSNAMES = {
   container: 'border-l border-gray-300 pl-4',
@@ -26,22 +15,21 @@ const CLASSNAMES = {
 };
 
 export const SameCategoryPosts: React.FC<Readonly<TSameCategoryPostsProps>> = ({
-  group,
   category,
+  posts,
 }) => {
   return (
     <div className={CLASSNAMES.container}>
       <h4 className={CLASSNAMES.header}>Same category posts</h4>
 
       <ul className={CLASSNAMES.list}>
-        {MOCK_POSTS.map((post) => (
+        {posts.map((post) => (
           <PostCard
             key={post.id}
             id={post.id}
-            group={group}
             category={category}
             title={post.title}
-            displayImage={post.displayImage}
+            displayImage={post.category.image || ''}
           />
         ))}
       </ul>
