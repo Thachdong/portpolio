@@ -5,6 +5,7 @@ type TBreadcrumbProps = {
   items: {
     href?: string;
     title: string;
+    id: string;
   }[];
 };
 
@@ -19,13 +20,13 @@ export const Breadcrumb: React.FC<Readonly<TBreadcrumbProps>> = ({ items }) => {
       {items.map((i) => {
         if (i.href) {
           return (
-            <>
+            <React.Fragment key={i.id}>
               <Link href={i.href}>{i.title}</Link> {' / '}
-            </>
+            </React.Fragment>
           );
         }
 
-        return <span className={CLASSNAMES.disabledBreadcrumb}>{i.title}</span>;
+        return <span key={i.id} className={CLASSNAMES.disabledBreadcrumb}>{i.title}</span>;
       })}
     </div>
   );

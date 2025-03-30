@@ -30,6 +30,7 @@ export default [
                 'feature:base-ui',
                 'feature:utility',
                 'feature:blog-ui',
+                'feature:database',
               ],
             },
             {
@@ -38,6 +39,7 @@ export default [
                 'feature:base-ui',
                 'feature:utility',
                 'feature:blog-admin-ui',
+                'feature:database',
               ],
             },
             {

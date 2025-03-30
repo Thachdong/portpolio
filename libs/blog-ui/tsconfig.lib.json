@@ -33,5 +33,12 @@
     "src/**/*.spec.jsx",
     "src/server.ts"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "../utility/src/**/*.ts",
+    "../database/src/**/*.ts"
+  ]
 }

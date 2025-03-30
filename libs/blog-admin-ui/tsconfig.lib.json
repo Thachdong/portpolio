@@ -10,5 +10,9 @@
       "@nx/next/typings/image.d.ts"
     ]
   },
-  "include": ["../../libs/utility/**/*.ts", "../../libs/database/**/*.ts"]
+  "include": [
+    "../../libs/utility/**/*.ts",
+    "../../libs/database/**/*.ts",
+    "../../libs/storybook/src/.storybook/**/*"
+  ]
 }

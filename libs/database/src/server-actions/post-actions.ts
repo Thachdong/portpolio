@@ -6,7 +6,7 @@ import { createServerAction } from './create-server-action';
 import { uploadFile } from '../services/s3-services';
 import { createPostService } from '../services/post-services';
 import { TCreatePost } from '../types/post';
-
+import { revalidatePath } from 'next/cache';
 /**
  * Create new post
  *
@@ -35,19 +35,20 @@ async function createPost(mdFile: File): Promise<void> {
   // upload file to S3 with hash in filename
   const filename = `${new Date().getTime()}-${mdFile.name}`;
 
-  console.log('filename', filename);
-
   await uploadFile(mdFile, filename, ES3Folder.POSTS);
 
   // create post in database
   const posts: TCreatePost = {
-    filePath: filename,
+    filename,
+    title: parsedFrontMatter.data.title,
     authorId: parsedFrontMatter.data.authorId,
     categoryId: parsedFrontMatter.data.categoryId,
     status: EPostRole.IDLE,
   };
 
   await createPostService(posts);
+
+  revalidatePath('/blog_admin/posts');
 }
 
 export const createPostAction = createServerAction(createPost);

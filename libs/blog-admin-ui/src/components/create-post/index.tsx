@@ -5,8 +5,11 @@ import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
 import { markdownComponents } from '@/utility';
 import { createPostAction } from '@/database';
+import { useRouter } from 'next/navigation';
 
 export const CreatePostForm: React.FC = () => {
+  const router = useRouter();
+
   const [mdxContent, setMdxContent] = useState<MDXRemoteSerializeResult | null>(
     null
   );
@@ -35,6 +38,8 @@ export const CreatePostForm: React.FC = () => {
     e.preventDefault();
     if (file) {
       await createPostAction(file);
+
+      router.push('/blog_admin/posts');
     }
   };
 
@@ -60,7 +65,16 @@ export const CreatePostForm: React.FC = () => {
       <div className="mt-4 border border-gray-300 p-4 rounded overflow-auto">
         {mdxContent ? (
           <div style={{ all: 'unset' }}>
-            {JSON.stringify(frontMatter)}
+            <h3 className="font-bold">Front Matter:</h3>
+            <ul>
+              {frontMatter &&
+                Object.entries(frontMatter).map(([key, value]) => (
+                  <li key={key}>
+                    <span className="font-bold">{key}:</span>
+                    <span>{value?.toString()}</span>
+                  </li>
+                ))}
+            </ul>
             <MDXRemote {...mdxContent} components={markdownComponents} />
           </div>
         ) : (

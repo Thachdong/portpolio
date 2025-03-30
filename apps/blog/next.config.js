@@ -14,6 +14,7 @@ const nextConfig = {
   },
   assetPrefix: '/blog',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'], // Add MDX support
+  transpilePackages: ['next-mdx-remote'],
 };
 
 const withMDX = createMDX({});
