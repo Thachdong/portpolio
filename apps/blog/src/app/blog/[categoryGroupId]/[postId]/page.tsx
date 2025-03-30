@@ -4,6 +4,7 @@ import {
   getMdFileContent,
   TFrontMatter,
   getPostsByCategoryIdService,
+  getCommentsByPostIdService,
 } from '@/database';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import { markdownComponents } from '@/utility';
@@ -39,10 +40,11 @@ export default async function PostDetailPage({
   });
   // #endregion
 
-  // #region -- get same category posts
-  const sameCategoryPosts = await getPostsByCategoryIdService(
-    post?.category.id || ''
-  );
+  // #region -- get same category posts and comments
+  const [sameCategoryPosts, comments] = await Promise.all([
+    getPostsByCategoryIdService(post?.category.id || ''),
+    getCommentsByPostIdService(postId),
+  ]);
   // #endregion
 
   return (
@@ -75,7 +77,7 @@ export default async function PostDetailPage({
 
         <div style={{ all: 'unset' }}>{content}</div>
 
-        <PostComments />
+        <PostComments postId={postId} currentComments={comments} />
       </div>
 
       <SameCategoryPosts
