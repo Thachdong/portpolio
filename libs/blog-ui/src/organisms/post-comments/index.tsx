@@ -53,7 +53,7 @@ export const PostComments: React.FC<Readonly<TPostDetailProps>> = ({
 
     eventSource.onmessage = (event) => {
       const data: TComment = JSON.parse(event.data);
-      setComments((prev) => [...prev, { ...data }]);
+      setComments((prev) => [{ ...data }, ...prev]);
     };
 
     eventSource.onerror = (error) => {

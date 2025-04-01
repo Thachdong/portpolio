@@ -10,7 +10,6 @@ export async function GET(req: NextRequest) {
   const stream = new ReadableStream({
     start(controller) {
       const onMessage = (message: TMessage) => {
-        console.log('received message ==================', message);
         if (message.postId === postId) {
           controller.enqueue(
             new TextEncoder().encode(`data: ${JSON.stringify(message)}\n\n`)

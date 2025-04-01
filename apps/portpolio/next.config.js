@@ -24,10 +24,6 @@ const nextConfig = {
         destination: 'http://localhost:3001/_next/:path*',
       },
       {
-        source: '/api/chat/:path*',
-        destination: 'http://localhost:3001/api/chat/:path*',
-      },
-      {
         source: '/blog_admin/:path*',
         destination: 'http://localhost:3002/blog_admin/:path*',
       },

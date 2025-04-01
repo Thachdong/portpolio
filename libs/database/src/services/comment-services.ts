@@ -53,6 +53,9 @@ export async function getCommentsByPostIdService(
     include: {
       author: true,
     },
+    orderBy: {
+      createdAt: 'desc',
+    },
   });
 
   return comments.map((comment) => ({
