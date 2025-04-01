@@ -48,6 +48,7 @@ export default [
                 'feature:base-ui',
                 'feature:utility',
                 'feature:portpolio-ui',
+                'feature:database',
               ],
             },
           ],

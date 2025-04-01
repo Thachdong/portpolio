@@ -198,3 +198,27 @@ export async function getCategoryGroupByPostIdService(
 
   return post?.category.categoryGroup || null;
 }
+
+/**
+ * Search posts by title, category name, category group name
+ * @param search - The search term
+ * @returns The posts
+ */
+export async function searchPostsService(
+  search: string
+): Promise<TAdminPost[]> {
+  return postRepository.findMany({
+    where: {
+      OR: [
+        { title: { contains: search, mode: 'insensitive' } },
+        { category: { name: { contains: search, mode: 'insensitive' } } },
+        {
+          category: {
+            categoryGroup: { name: { contains: search, mode: 'insensitive' } },
+          },
+        },
+      ],
+    },
+    select: postSelectObject,
+  });
+}

@@ -24,7 +24,7 @@ export async function SidebarMenu({
           <ul>
             {group.categories.map((category) => (
               <li key={category.id}>
-                <a href={`#${category.id}`}>{category.name}</a>
+                <a href={`/blog#${category.id}`}>{category.name}</a>
               </li>
             ))}
           </ul>
