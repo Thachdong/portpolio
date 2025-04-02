@@ -1,3 +1,5 @@
+'use server';
+
 import prisma from '../prisma';
 import { postSelectObject } from '../selectors';
 import { TCategoryDetail } from '../types/category';

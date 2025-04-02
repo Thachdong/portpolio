@@ -13,6 +13,9 @@ const nextConfig = {
     svgr: false,
   },
   assetPrefix: '/portpolio',
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
   async rewrites() {
     return [
       {
