@@ -1,5 +1,12 @@
 import './global.css';
 import Script from 'next/script';
+import { IBM_Plex_Mono } from 'next/font/google';
+
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'Welcome to portpolio',
@@ -19,7 +26,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="bg-dark-jungle text-soft-cream">{children}</body>
+      <body
+        className={`bg-dark-jungle text-soft-cream ${ibmPlexMono.className}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
