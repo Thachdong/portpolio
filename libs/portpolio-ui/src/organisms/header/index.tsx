@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -11,17 +11,35 @@ export const Header: React.FC = () => {
     setActiveLink(link);
   };
 
-  React.useEffect(() => {
-    // Get hash from URL without the #
-    const hash = window.location.hash.slice(1);
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['about', 'skills', 'projects'].map((id) => {
+        const element = document.getElementById(id);
+        if (!element) return { id, top: 0 };
+        const rect = element.getBoundingClientRect();
+        return {
+          id,
+          top: rect.top,
+        };
+      });
 
-    if (hash) {
-      setActiveLink(hash);
-    }
+      // Find the section closest to top of viewport
+      const closest = sections.reduce((prev, curr) => {
+        return Math.abs(curr.top) < Math.abs(prev.top) ? curr : prev;
+      });
+
+      setActiveLink(closest.id);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <ul className="bg-deep-teal flex gap-8 items-center border-gray-300 px-4 py-2 rounded-b-lg">
+    <ul className="bg-deep-teal flex gap-12 items-center border-gray-300 px-4 py-2 rounded-b-lg">
       <li>
         <motion.span
           className="text-2xl font-bold text-burnt-orange tracking-widest font-light"
@@ -130,6 +148,7 @@ export const Header: React.FC = () => {
       </li>
 
       <li className="flex-grow"></li>
+
       <Link href={'/cv'}>
         <motion.span
           initial={{ opacity: 0, y: -20 }}
