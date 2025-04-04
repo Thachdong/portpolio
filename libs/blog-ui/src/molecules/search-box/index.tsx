@@ -7,13 +7,14 @@ type TSearchBoxProps = {
 };
 
 const CLASSNAMES = {
-  container: 'relative',
-  input: 'w-full border border-gray-300 leading-10 rounded pl-2 pr-12',
+  container: 'relative max-w-xl',
+  input:
+    'w-full border-2 border-deep-teal rounded-lg py-2 px-4 pr-12 text-lg focus:outline-none focus:border-burnt-orange transition-colors',
   button:
-    'absolute z-10 right-[0.5px] px-2 leading-10 hover:bg-gray-200 my-[1px] rounded rounded-l-none text-gray-500',
+    'absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1 bg-deep-teal text-soft-cream rounded-md hover:bg-burnt-orange transition-colors',
 };
 
-const DEFAULT_PLACEHOLDER = 'Searching posts ...';
+const DEFAULT_PLACEHOLDER = 'Search posts...';
 
 export const SearchBox: React.FC<Readonly<TSearchBoxProps>> = ({
   placeholder,
@@ -44,7 +45,7 @@ export const SearchBox: React.FC<Readonly<TSearchBoxProps>> = ({
         className={CLASSNAMES.input}
         type="text"
         name="search"
-        placeholder={DEFAULT_PLACEHOLDER || placeholder}
+        placeholder={placeholder || DEFAULT_PLACEHOLDER}
         defaultValue={searchQuery}
       />
       <button type="submit" className={CLASSNAMES.button}>

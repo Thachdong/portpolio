@@ -10,7 +10,7 @@ type TSameCategoryPostsProps = {
 const CLASSNAMES = {
   container: 'border-l border-gray-300 pl-4',
   header:
-    'inline-block font-bold mb-4 capitalize pt-4 mb-4 border-b-2 border-[#2f6e91]',
+    'inline-block font-bold mb-4 capitalize pt-4 mb-4 border-b-2 border-deep-teal',
   list: 'grid grid-cols-1 gap-y-4',
 };
 

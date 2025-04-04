@@ -21,12 +21,22 @@ export const Breadcrumb: React.FC<Readonly<TBreadcrumbProps>> = ({ items }) => {
         if (i.href) {
           return (
             <React.Fragment key={i.id}>
-              <Link href={i.href}>{i.title}</Link> {' / '}
+              <Link
+                href={i.href}
+                className="text-deep-teal font-bold hover:text-burnt-orange"
+              >
+                {i.title}
+              </Link>{' '}
+              {' / '}
             </React.Fragment>
           );
         }
 
-        return <span key={i.id} className={CLASSNAMES.disabledBreadcrumb}>{i.title}</span>;
+        return (
+          <span key={i.id} className={CLASSNAMES.disabledBreadcrumb}>
+            {i.title}
+          </span>
+        );
       })}
     </div>
   );

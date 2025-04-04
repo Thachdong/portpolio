@@ -10,12 +10,18 @@ type TCategoryGroupListProps = {
 };
 
 const CLASSNAMES = {
-  container: 'flex flex-col gap-4 p-4',
-  header: 'flex justify-between items-center mb-4 border-b-2 border-[#2f6e91]',
-  headerLink: 'text-[#2f6e91]',
-  headerText: 'font-bold text-xl',
-  searchContainer: 'p-4',
-  searchList: 'grid grid-cols-4 gap-4',
+  container: 'flex flex-col gap-8 p-6',
+  header:
+    'flex justify-between items-center mb-6 pb-2 border-b-2 border-deep-teal',
+  headerLink:
+    'text-deep-teal hover:text-burnt-orange transition-colors font-medium',
+  headerText: 'font-bold text-xl text-dark-jungle',
+  searchContainer: 'p-6 bg-soft-cream rounded-lg shadow-sm',
+  searchList:
+    'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6',
+  searchTerm: 'text-deep-teal',
+  searchCount: 'text-deep-teal mt-2',
+  searchDivider: 'my-6 border-deep-teal/20',
 };
 
 export async function CategoryGroupList({
@@ -26,13 +32,13 @@ export async function CategoryGroupList({
   if (searchPosts && searchTerm) {
     return (
       <div className={CLASSNAMES.searchContainer}>
-        <p className="text-gray-500">
+        <p className={CLASSNAMES.searchTerm}>
           Searching for <span className="font-bold">{searchTerm}</span>
         </p>
-        <p className="text-gray-500">
+        <p className={CLASSNAMES.searchCount}>
           Results: <span className="font-bold">{searchPosts.length}</span>
         </p>
-        <hr className="my-4 border-gray-300" />
+        <hr className={CLASSNAMES.searchDivider} />
         <ul className={CLASSNAMES.searchList}>
           {searchPosts.map((post) => {
             return (
