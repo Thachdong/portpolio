@@ -2,6 +2,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { MobileMenuIcon } from '../../molecules';
 
 type THeaderMobileProps = {
   handleLinkClick: (link: string) => void;
@@ -52,14 +53,7 @@ export const HeaderMobile: React.FC<Readonly<THeaderMobileProps>> = ({
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="text-burnt-orange"
         >
-          <motion.div
-            animate={isMenuOpen ? 'open' : 'closed'}
-            className="space-y-2"
-          >
-            <span className="block w-8 h-0.5 bg-current"></span>
-            <span className="block w-8 h-0.5 bg-current"></span>
-            <span className="block w-8 h-0.5 bg-current"></span>
-          </motion.div>
+          <MobileMenuIcon isOpen={isMenuOpen} />
         </button>
         <span className="ml-4 text-burnt-orange font-medium">
           {activeLink.charAt(0).toUpperCase() + activeLink.slice(1)}
@@ -111,7 +105,7 @@ export const HeaderMobile: React.FC<Readonly<THeaderMobileProps>> = ({
                 Blog
               </Link>
               <Link href="/cv" className="text-gray-300">
-                Download CV
+                My CV
               </Link>
             </nav>
           </motion.div>
