@@ -8,8 +8,19 @@ type TPostDetailProps = {
 };
 
 const CLASSNAMES = {
-  header: 'font-bold mb-4',
-  editor: 'w-full border border-gray-300 rounded p-2',
+  container: 'bg-soft-cream rounded-lg shadow-sm p-6',
+  header: 'font-bold text-xl text-dark-jungle border-b-2 border-deep-teal mb-6',
+  editor:
+    'w-full border-2 border-deep-teal rounded-lg p-4 focus:outline-none focus:border-burnt-orange transition-colors min-h-[120px] mb-4',
+  button:
+    'bg-deep-teal text-soft-cream px-6 py-2 rounded-lg hover:bg-burnt-orange transition-colors',
+  emptyState: 'text-deep-teal/60 text-center my-8 italic',
+  commentsList: 'space-y-6 mt-8',
+  commentContainer: 'border-b border-deep-teal/20 pb-6',
+  commentHeader: 'flex items-center gap-3 mb-3',
+  author: 'font-medium text-deep-teal',
+  date: 'text-sm text-deep-teal/60',
+  content: 'text-dark-jungle leading-relaxed',
 };
 
 export const PostComments: React.FC<Readonly<TPostDetailProps>> = ({
@@ -65,39 +76,37 @@ export const PostComments: React.FC<Readonly<TPostDetailProps>> = ({
     };
   }, [postId]);
   // #endregion
+
   return (
-    <div>
-      <h4 className={CLASSNAMES.header}>COMMENTS</h4>
+    <div className={CLASSNAMES.container}>
+      <h4 className={CLASSNAMES.header}>Comments</h4>
 
       <form onSubmit={handleSubmit}>
         <textarea
           name="comment"
           id="comment"
-          placeholder="Leave you comment ..."
+          placeholder="Share your thoughts..."
           className={CLASSNAMES.editor}
         ></textarea>
 
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-        >
-          Send
+        <button type="submit" className={CLASSNAMES.button}>
+          Post Comment
         </button>
       </form>
 
       {comments.length === 0 ? (
-        <p className="text-gray-500 text-center my-4">No comments yet</p>
+        <p className={CLASSNAMES.emptyState}>Be the first to comment!</p>
       ) : (
-        <div className="space-y-4 mt-4">
+        <div className={CLASSNAMES.commentsList}>
           {comments.map((comment) => (
-            <div key={comment.id} className="border-b border-gray-200 pb-4">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="font-medium">{comment.author}</span>
-                <span className="text-sm text-gray-500">
+            <div key={comment.id} className={CLASSNAMES.commentContainer}>
+              <div className={CLASSNAMES.commentHeader}>
+                <span className={CLASSNAMES.author}>{comment.author}</span>
+                <span className={CLASSNAMES.date}>
                   {new Date(comment.createdAt).toLocaleDateString()}
                 </span>
               </div>
-              <p className="text-gray-700">{comment.content}</p>
+              <p className={CLASSNAMES.content}>{comment.content}</p>
             </div>
           ))}
         </div>

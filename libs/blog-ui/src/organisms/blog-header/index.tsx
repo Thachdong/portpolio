@@ -2,10 +2,12 @@ import React from 'react';
 import { SearchBox } from '../../molecules';
 
 const CLASSNAMES = {
-  wrapper: 'bg-[#2f6e91] py-4',
-  container: 'relative max-w-[1366px] mx-auto flex items-center gap-x-4',
-  logo: 'absolute text-2xl tracking-widest text-white font-light',
-  searchBox: 'flex-grow max-w-[475px] mx-auto',
+  wrapper:
+    'flex items-center w-full bg-gradient-to-r from-dark-jungle to-deep-teal shadow-lg',
+  container:
+    'relative w-full max-w-[1366px] mx-auto px-4 flex items-center justify-between',
+  logo: 'text-3xl tracking-widest text-soft-cream font-light hover:text-lime-green transition-colors duration-300',
+  searchBox: 'max-w-[475px] w-full ml-8',
 };
 
 export const BlogHeader: React.FC = () => {

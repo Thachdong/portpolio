@@ -17,10 +17,10 @@ const MENU: TMenuItem[] = [
 ];
 
 const CLASSNAMES = {
-  menu: 'flex flex-col h-screen w-[225px] overflow-y-auto border-r border-gray-300',
-  item: 'w-full text-gray-700 hover:text-gray-900 hover:bg-gray-300 px-2 py-1',
+  menu: 'flex flex-col h-screen w-[250px] bg-soft-cream shadow-lg border-r border-deep-teal',
+  item: 'w-full text-dark-jungle hover:text-soft-cream hover:bg-deep-teal transition-colors duration-200 px-4 py-2',
   link: 'w-full h-full flex items-center justify-start',
-  active: '!bg-gray-500 !text-white',
+  active: 'bg-deep-teal text-soft-cream font-bold',
 };
 
 export const Sidebar: React.FC = () => {

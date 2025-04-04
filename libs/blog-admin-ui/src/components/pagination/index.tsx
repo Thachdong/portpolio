@@ -7,28 +7,33 @@ type TPaginationProps = {
   path: string;
 };
 
-export const Pagination: React.FC<TPaginationProps> = ({
+const CLASSNAMES = {
+  wrapper: 'flex justify-center items-center gap-3 py-4',
+  page: 'px-4 py-2 rounded-full bg-deep-teal text-soft-cream font-semibold shadow-md',
+  activePage:
+    'px-4 py-2 rounded-full border border-gray-300 !bg-soft-cream text-deep-teal hover:bg-blue-100 transition-colors duration-200',
+  link: 'px-4 py-2 rounded-full border border-gray-300 bg-white text-deep-teal hover:bg-blue-100 transition-colors duration-200',
+};
+
+export const Pagination: React.FC<Readonly<TPaginationProps>> = ({
   total,
   page,
   limit,
   path,
 }) => {
   return (
-    <div className="flex gap-2">
+    <div className={CLASSNAMES.wrapper}>
       {Array.from({ length: Math.ceil(total / limit) }, (_, i) => i + 1).map(
         (pageNum) =>
           pageNum === page ? (
-            <span
-              key={pageNum}
-              className="px-3 py-1 rounded border bg-blue-500 text-white border-blue-600"
-            >
+            <span key={pageNum} className={CLASSNAMES.activePage}>
               {pageNum}
             </span>
           ) : (
             <Link
               key={pageNum}
               href={`${path}?page=${pageNum}`}
-              className="px-3 py-1 rounded border bg-white border-gray-300 hover:bg-gray-50 hover:border-gray-400"
+              className={CLASSNAMES.link}
             >
               {pageNum}
             </Link>

@@ -6,8 +6,9 @@ type TCategoryPostsProps = {
 };
 
 const CLASSNAMES = {
-  list: 'grid grid-cols-4 gap-4 mb-8',
-  header: 'font-bold text-xl border-b-2 border-[#2f6e91] mb-4',
+  container: 'bg-soft-cream rounded-lg shadow-sm p-6',
+  header: 'font-bold text-xl text-dark-jungle border-b-2 border-deep-teal mb-6',
+  list: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6',
 };
 
 export async function CategoryPosts({
@@ -20,7 +21,7 @@ export async function CategoryPosts({
   }
 
   return (
-    <div>
+    <div className={CLASSNAMES.container}>
       <h4 className={CLASSNAMES.header}>{categoryDetail.name}</h4>
 
       <ul className={CLASSNAMES.list}>
