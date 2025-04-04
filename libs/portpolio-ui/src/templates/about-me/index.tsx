@@ -7,7 +7,7 @@ export const AboutMe = () => {
   return (
     <section
       id="about"
-      className="min-h-[80vh] bg-dark-jungle flex items-center justify-center py-20"
+      className="min-h-screen bg-dark-jungle flex items-center justify-center py-20"
     >
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
         <motion.div

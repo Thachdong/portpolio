@@ -120,7 +120,7 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen bg-dark-jungle flex items-center justify-center py-20"
+      className="min-h-screen bg-dark-jungle flex items-center justify-center py-20 mt-[15%]"
     >
       <div className="container mx-auto px-4">
         <motion.h2

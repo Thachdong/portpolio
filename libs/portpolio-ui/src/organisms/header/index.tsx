@@ -15,8 +15,11 @@ export const Header: React.FC = () => {
     const handleScroll = () => {
       const sections = ['about', 'skills', 'projects'].map((id) => {
         const element = document.getElementById(id);
+
         if (!element) return { id, top: 0 };
+
         const rect = element.getBoundingClientRect();
+
         return {
           id,
           top: rect.top,
