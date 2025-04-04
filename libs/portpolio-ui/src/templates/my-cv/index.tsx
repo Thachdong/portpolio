@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import './index.css';
 
 export const MyCV = () => {
   return (
@@ -23,7 +22,7 @@ export const MyCV = () => {
               height={300}
               className="w-[55%] mx-auto"
             />
-            <h2 className="absolute bottom-4 mx-4 text-black text-2xl font-bold">
+            <h2 className="absolute bottom-4 mx-4 text-deep-teal text-2xl font-bold">
               Thach Dong
             </h2>
           </div>
@@ -31,7 +30,7 @@ export const MyCV = () => {
           {/* Contact Info */}
           <div className="p-4">
             <div className="flex items-center mb-4">
-              <i className="fa-solid fa-briefcase !text-dark-jungle mr-4"></i>
+              <i className="fa-solid fa-briefcase !text-deep-teal mr-4"></i>
               <span>Front-end developer</span>
             </div>
 
@@ -40,7 +39,7 @@ export const MyCV = () => {
               target="_blank"
               className="flex items-center mb-4 text-gray-600"
             >
-              <i className="fa-solid fa-house-chimney text-teal-600 mr-4"></i>
+              <i className="fa-solid fa-house-chimney text-deep-teal mr-4"></i>
               <span>Thu Duc, HCM city</span>
             </Link>
 
@@ -48,7 +47,7 @@ export const MyCV = () => {
               href="mailto:thachdong270293@gmail.com"
               className="flex items-center mb-4 text-gray-600"
             >
-              <i className="fa-solid fa-envelope text-teal-600 mr-4"></i>
+              <i className="fa-solid fa-envelope text-deep-teal mr-4"></i>
               <span>thachdong270293@gmail.com</span>
             </Link>
 
@@ -56,7 +55,7 @@ export const MyCV = () => {
               href="tel:0353860797"
               className="flex items-center text-gray-600"
             >
-              <i className="fa-solid fa-phone text-teal-600 mr-4"></i>
+              <i className="fa-solid fa-phone text-deep-teal mr-4"></i>
               <span>0353 860 797</span>
             </Link>
           </div>
@@ -65,18 +64,20 @@ export const MyCV = () => {
 
           {/* About Me */}
           <div className="p-4">
-            <h3 className="flex items-center">
-              <i className="fa-solid fa-bullseye text-teal-600 mr-2"></i>
+            <h3 className="flex items-center mb-2">
+              <i className="fa-solid fa-bullseye text-deep-teal mr-2"></i>
               About me
             </h3>
 
             <ul className="list-disc pl-8 space-y-2">
-              <li>
+              <li className="text-justify">
                 I have 2.5 years of experiences in front-end development,
                 include 2 years working with Reactjs and it ecosystem libraries.
               </li>
-              <li>I familiar with development tool like Scrum.</li>
-              <li>
+              <li className="text-justify">
+                I familiar with development tool like Scrum.
+              </li>
+              <li className="text-justify">
                 I realized that English is extremely important tool for growing
                 programming skills, so I want to join team with english
                 communication environment (my speaking skills is not good then i
@@ -89,13 +90,13 @@ export const MyCV = () => {
 
           {/* Skills */}
           <div className="p-4">
-            <h3 className="flex items-center">
-              <i className="fa-solid fa-asterisk text-teal-600 mr-2"></i>
+            <h3 className="flex items-center mb-2">
+              <i className="fa-solid fa-asterisk text-deep-teal mr-2"></i>
               Skills
             </h3>
             <ul className="list-disc pl-8 space-y-2">
-              <li>Problem solving.</li>
-              <li>Teamworking.</li>
+              <li className="text-justify">Problem solving.</li>
+              <li className="text-justify">Teamworking.</li>
             </ul>
           </div>
         </aside>
@@ -110,45 +111,45 @@ export const MyCV = () => {
                 '0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%)',
             }}
           >
-            <h2 className="text-3xl flex items-center">
-              <i className="fa-solid fa-graduation-cap text-teal-600 mr-4"></i>
+            <h2 className="text-3xl flex items-center mb-4">
+              <i className="fa-solid fa-graduation-cap text-deep-teal mr-4"></i>
               Knowledge
             </h2>
 
             <section>
-              <h3>
+              <h3 className="mb-2">
                 <strong>
-                  <i className="fa-solid fa-circle-check text-highlight mr-2"></i>
+                  <i className="fa-solid fa-circle-check text-deep-teal mr-2"></i>
                   Javascript fundamentals(have confidence):
                 </strong>
               </h3>
-              <ul>
-                <li>Scope system</li>
-                <li>Function closures</li>
-                <li>Module design pattern</li>
-                <li>Prototypal inheritance</li>
-                <li>
+              <ul className="list-disc pl-8 space-y-2 mb-4">
+                <li className="text-justify">Scope system</li>
+                <li className="text-justify">Function closures</li>
+                <li className="text-justify">Module design pattern</li>
+                <li className="text-justify">Prototypal inheritance</li>
+                <li className="text-justify">
                   Asynchronous implementations with callback, promise,
                   async/await
                 </li>
-                <li>Type checking with typescript</li>
+                <li className="text-justify">Type checking with typescript</li>
               </ul>
             </section>
 
             <section>
-              <h3>
+              <h3 className="mb-2">
                 <strong>
-                  <i className="fa-solid fa-circle-check text-highlight mr-2"></i>
+                  <i className="fa-solid fa-circle-check text-deep-teal mr-2"></i>
                   Javascript libraries (familiar with):
                 </strong>
               </h3>
 
-              <ul>
-                <li>
+              <ul className="list-disc pl-8 space-y-2 mb-4">
+                <li className="text-justify">
                   SPA frameworks/libraries: ReactJs, NextJs (strongly in
                   function components, performance optimize)
                 </li>
-                <li>
+                <li className="text-justify">
                   UI frameworks/libraries: Bootstrap, tailwindcss, ant design,
                   material ui, react-query, react-hook-form, momentjs,
                   redux-toolkit, i18next ...
@@ -157,11 +158,11 @@ export const MyCV = () => {
             </section>
 
             <section>
-              <h3 className="mb-0">
+              <h3 className="mb-2">
                 <strong>
-                  <i className="fa-solid fa-circle-check text-highlight mr-2"></i>
+                  <i className="fa-solid fa-circle-check text-deep-teal mr-2"></i>
                   Other things:
-                  <span className="font-size: 1rem; font-weight: 400">
+                  <span className="text-base font-normal">
                     Source control with git, Agile-Scrum working flow,
                     bitbucket, Opsgenie, figma ...
                   </span>
@@ -178,55 +179,55 @@ export const MyCV = () => {
                 '0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%)',
             }}
           >
-            <h2 className="text-3xl flex items-center">
-              <i className="fa-solid fa-briefcase text-teal-600 mr-4"></i>
+            <h2 className="text-3xl flex items-center mb-4">
+              <i className="fa-solid fa-briefcase text-deep-teal mr-4"></i>
               Work Experience
             </h2>
 
             <div className="mb-4 border-b border-gray-200 pb-4">
-              <h3>Front End Developer / Mona Software</h3>
-              <div className="flex items-center text-teal-600 mb-4">
+              <h3 className="mb-2">Front End Developer / Mona Software</h3>
+              <div className="flex items-center text-deep-teal mb-4">
                 <i className="fa-solid fa-calendar-days mr-4"></i>
                 Sep 2022 -{' '}
-                <span className="bg-teal-600 text-white rounded px-2 ml-2 leading-6">
+                <span className="bg-deep-teal text-white rounded px-2 ml-2 leading-6">
                   Current
                 </span>
               </div>
-              <p className="mb-4">
+              <p className="mb-4 text-justify">
                 Join outsourcing projects. Almostly, build ERP web apps.
               </p>
-              <p>
+              <p className="text-justify">
                 Libraries/frameworks used: Nextjs, tailwindcss, ant design,
                 marterial-ui, react-hook-form ...
               </p>
             </div>
 
-            <section className="mb-4 border-bottom">
-              <h3>Front End Developer / AKADON</h3>
-              <div className="flex-box text-highlight mb-4">
+            <section className="mb-4 border-b border-gray-200 pb-4">
+              <h3 className="mb-2">Front End Developer / AKADON</h3>
+              <div className="flex items-center text-deep-teal mb-4">
                 <i className="fa-solid fa-calendar-days mr-4"></i>
                 Sep 2020 - Sep 2022
               </div>
-              <p>
+              <p className="mb-4 text-justify">
                 Developing company's products, applications for connecting
                 tutors and students. Key features: bidding courses; connect
                 students to tutors by messaging and video call system; manage
                 learning/teaching schedules; support multiple languages; LMS
                 features ...
               </p>
-              <p>
+              <p className="text-justify">
                 Libraries/frameworks used: Reactjs, Redux-toolkits, Bootstrap,
                 Twilio, Fullcalendar ...
               </p>
             </section>
 
             <section>
-              <h3>Front End Intern / Egany</h3>
-              <div className="flex-box text-highlight mb-4">
+              <h3 className="mb-2">Front End Intern / Egany</h3>
+              <div className="flex items-center text-deep-teal mb-4">
                 <i className="fa-solid fa-calendar-days mr-4"></i>
                 Dec 2019 - May 2020
               </div>
-              <p className="mb-0">
+              <p className="text-justify">
                 Build landing pages base on ecommerce flatform like Haravan and
                 Shopify using html, css, javascript, liquid.
               </p>
@@ -241,7 +242,7 @@ export const MyCV = () => {
           <Link
             href="./Dong-Thach-CV.pdf"
             target="_blank"
-            className="text-2xl text-teal-600 animate-bounce"
+            className="text-2xl text-deep-teal animate-bounce"
           >
             <i className="fa-solid fa-cloud-arrow-down"></i>
           </Link>

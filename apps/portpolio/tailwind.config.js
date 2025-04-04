@@ -25,7 +25,6 @@ module.exports = {
         'lime-green': '#95c623',
         'burnt-orange': '#E55812',
         'soft-cream': '#EFE7DA',
-        highlight: '#009688',
       },
     },
   },
