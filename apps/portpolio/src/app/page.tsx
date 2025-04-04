@@ -2,26 +2,43 @@
 
 import { Header, AboutMe, Skills, Projects, ContactMe } from '@/portpolio-ui';
 import { motion } from 'framer-motion';
+import { useCallback, useMemo } from 'react';
 
 export default function Index() {
-  const sectionVariants = {
-    hidden: { opacity: 0, scale: 0.15, y: 100 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0, 0.71, 0.2, 1.01],
-        scale: {
-          type: 'tween',
-          duration: 0.8,
-          ease: 'easeOut',
-          bounce: 0.25,
+  const sectionVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0, scale: 0, y: 0 },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        y: 64,
+        transition: {
+          duration: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+          scale: {
+            type: 'tween',
+            duration: 0.8,
+            ease: 'easeOut',
+            bounce: 0.25,
+          },
         },
       },
-    },
-  };
+    }),
+    []
+  );
+
+  const onViewportEnter = useCallback((id: string) => {
+    if (window.innerWidth >= 768) {
+      const timeoutId = setTimeout(() => {
+        document.querySelector(id)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+        });
+      }, 500);
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, []);
 
   return (
     <>
@@ -40,13 +57,10 @@ export default function Index() {
           whileInView="visible"
           viewport={{
             once: false,
-            amount: 0.25,
+            amount: 0,
           }}
           onViewportEnter={() => {
-            document.getElementById('about')?.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-            });
+            onViewportEnter('#about');
           }}
         >
           <AboutMe />
@@ -60,13 +74,10 @@ export default function Index() {
           whileInView="visible"
           viewport={{
             once: false,
-            amount: 0.25,
+            amount: 0,
           }}
           onViewportEnter={() => {
-            document.getElementById('skills')?.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-            });
+            onViewportEnter('#skills');
           }}
         >
           <Skills />
@@ -80,13 +91,10 @@ export default function Index() {
           whileInView="visible"
           viewport={{
             once: false,
-            amount: 0.25,
+            amount: 0,
           }}
           onViewportEnter={() => {
-            document.getElementById('projects')?.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-            });
+            onViewportEnter('#projects');
           }}
         >
           <Projects />
@@ -100,13 +108,10 @@ export default function Index() {
           whileInView="visible"
           viewport={{
             once: false,
-            amount: 0.25,
+            amount: 0,
           }}
           onViewportEnter={() => {
-            document.getElementById('contact-me')?.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-            });
+            onViewportEnter('#contact-me');
           }}
         >
           <ContactMe />

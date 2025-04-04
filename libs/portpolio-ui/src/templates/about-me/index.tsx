@@ -7,9 +7,9 @@ export const AboutMe = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-dark-jungle flex items-center justify-center py-20"
+      className="min-h-screen bg-dark-jungle flex items-center justify-center"
     >
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+      <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12">
         <motion.div
           className="md:w-1/2"
           initial={{ opacity: 0, x: -50 }}
