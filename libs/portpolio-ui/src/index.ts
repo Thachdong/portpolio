@@ -1,1 +1,2 @@
-export * from './organisms/header';
+export * from './organisms';
+export * from './templates';
