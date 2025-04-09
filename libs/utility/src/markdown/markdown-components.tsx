@@ -11,66 +11,54 @@ type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>;
 
 export const markdownComponents = {
   h1: (props: HeadingProps) => (
-    <h1 className="font-medium pt-12 mb-0 text-4xl" {...props}>
+    <h1 className="font-medium pt-12 mb-0 text-4xl text-black" {...props}>
       {props.children}
     </h1>
   ),
   h2: (props: HeadingProps) => (
-    <h2
-      className="text-gray-800 dark:text-zinc-200 font-medium mt-8 mb-3 text-3xl"
-      {...props}
-    >
+    <h2 className="text-black font-medium mt-8 mb-3 text-3xl" {...props}>
       {props.children}
     </h2>
   ),
   h3: (props: HeadingProps) => (
-    <h3
-      className="text-gray-800 dark:text-zinc-200 font-medium mt-8 mb-3 text-2xl"
-      {...props}
-    >
+    <h3 className="text-black font-medium mt-8 mb-3 text-2xl" {...props}>
       {props.children}
     </h3>
   ),
   h4: (props: HeadingProps) => (
-    <h4 className="font-medium text-xl" {...props}>
+    <h4 className="font-medium text-xl text-black" {...props}>
       {props.children}
     </h4>
   ),
   h5: (props: HeadingProps) => (
-    <h5 className="font-medium text-lg" {...props}>
+    <h5 className="font-medium text-lg text-black" {...props}>
       {props.children}
     </h5>
   ),
   h6: (props: HeadingProps) => (
-    <h6 className="font-medium text-base" {...props}>
+    <h6 className="font-medium text-base text-black" {...props}>
       {props.children}
     </h6>
   ),
   p: (props: ParagraphProps) => (
-    <p className="text-gray-800 dark:text-zinc-300 leading-snug" {...props} />
+    <p className="text-black leading-snug" {...props} />
   ),
   ol: (props: ListProps) => (
-    <ol
-      className="text-gray-800 dark:text-zinc-300 list-decimal pl-5 space-y-2"
-      {...props}
-    />
+    <ol className="text-black list-decimal pl-5 space-y-2" {...props} />
   ),
   ul: (props: ListProps) => (
-    <ul
-      className="text-gray-800 dark:text-zinc-300 list-disc pl-5 space-y-1"
-      {...props}
-    />
+    <ul className="text-black list-disc pl-5 space-y-1" {...props} />
   ),
-  li: (props: ListItemProps) => <li className="pl-1" {...props} />,
+  li: (props: ListItemProps) => <li className="pl-1 text-black" {...props} />,
   em: (props: ComponentPropsWithoutRef<'em'>) => (
-    <em className="font-medium" {...props} />
+    <em className="font-medium text-black" {...props} />
   ),
   strong: (props: ComponentPropsWithoutRef<'strong'>) => (
-    <strong className="font-medium" {...props} />
+    <strong className="font-medium text-black" {...props} />
   ),
   a: ({ href, children, ...props }: AnchorProps) => {
     const className =
-      'text-blue-500 hover:text-blue-700 dark:text-gray-400 hover:dark:text-gray-300 dark:underline dark:underline-offset-2 dark:decoration-gray-800';
+      'text-black hover:text-burnt-orange underline underline-offset-2 decoration-black';
     if (href?.startsWith('/')) {
       return (
         <Link href={href} className={className} {...props}>
@@ -102,11 +90,13 @@ export const markdownComponents = {
     return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
   },
   Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
-    <table>
+    <table className="text-black">
       <thead>
         <tr>
           {data.headers.map((header, index) => (
-            <th key={index}>{header}</th>
+            <th key={index} className="text-black">
+              {header}
+            </th>
           ))}
         </tr>
       </thead>
@@ -123,7 +113,7 @@ export const markdownComponents = {
   ),
   blockquote: (props: BlockquoteProps) => (
     <blockquote
-      className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-gray-700 dark:border-zinc-600 dark:text-zinc-300"
+      className="ml-[0.075em] border-l-3 border-black pl-4 text-black"
       {...props}
     />
   ),

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
+import './index.css';
 export const MyCV = () => {
   return (
     <div className="min-h-screen bg-white text-gray-600 p-4">
@@ -71,39 +71,49 @@ export const MyCV = () => {
 
             <ul className="list-disc pl-8 space-y-2">
               <li className="text-justify">
-                I have 2.5 years of experiences in front-end development,
-                include 2 years working with Reactjs and it ecosystem libraries.
+                Senior front-end developer with 4+ years of experience building
+                scalable web applications using React and modern JavaScript
               </li>
               <li className="text-justify">
-                I familiar with development tool like Scrum.
+                Expert in micro-frontend architectures including Module
+                Federation and Next.js Multi Zone approaches
               </li>
               <li className="text-justify">
-                I realized that English is extremely important tool for growing
-                programming skills, so I want to join team with english
-                communication environment (my speaking skills is not good then i
-                think that will helpfully for improving speaking).
+                Strong advocate for code quality, test coverage, and continuous
+                deployment practices
+              </li>
+              <li className="text-justify">
+                Proven track record of delivering complex enterprise
+                applications and mentoring junior developers
               </li>
             </ul>
           </div>
 
-          <hr className="mx-4 border-t border-gray-200" />
-
-          {/* Skills */}
-          <div className="p-4">
-            <h3 className="flex items-center mb-2">
-              <i className="fa-solid fa-asterisk text-deep-teal mr-2"></i>
-              Skills
+          <section className="p-4">
+            <h3 className="mb-2">
+              <strong>
+                <i className="fa-solid fa-briefcase text-deep-teal mr-2"></i>
+                Professional Skills:
+              </strong>
             </h3>
-            <ul className="list-disc pl-8 space-y-2">
-              <li className="text-justify">Problem solving.</li>
-              <li className="text-justify">Teamworking.</li>
+            <ul className="list-disc pl-8 space-y-2 mb-4">
+              <li className="text-justify">
+                Agile/Scrum methodology and project management
+              </li>
+              <li className="text-justify">
+                Code review and technical documentation
+              </li>
+              <li className="text-justify">Team collaboration and mentoring</li>
+              <li className="text-justify">
+                Problem-solving and architectural design
+              </li>
             </ul>
-          </div>
+          </section>
         </aside>
 
         {/* Main Content */}
         <main className="w-full md:w-[65%] flex flex-col gap-y-4">
-          {/* Knowledge */}
+          {/* Knowledge & Skills */}
           <section
             className="p-4 shadow-lg flex-grow"
             style={{
@@ -113,46 +123,35 @@ export const MyCV = () => {
           >
             <h2 className="text-3xl flex items-center mb-4">
               <i className="fa-solid fa-graduation-cap text-deep-teal mr-4"></i>
-              Knowledge
+              Knowledge & Skills
             </h2>
 
             <section>
               <h3 className="mb-2">
                 <strong>
                   <i className="fa-solid fa-circle-check text-deep-teal mr-2"></i>
-                  Javascript fundamentals(have confidence):
+                  Core Technical Skills:
                 </strong>
               </h3>
               <ul className="list-disc pl-8 space-y-2 mb-4">
-                <li className="text-justify">Scope system</li>
-                <li className="text-justify">Function closures</li>
-                <li className="text-justify">Module design pattern</li>
-                <li className="text-justify">Prototypal inheritance</li>
                 <li className="text-justify">
-                  Asynchronous implementations with callback, promise,
-                  async/await
-                </li>
-                <li className="text-justify">Type checking with typescript</li>
-              </ul>
-            </section>
-
-            <section>
-              <h3 className="mb-2">
-                <strong>
-                  <i className="fa-solid fa-circle-check text-deep-teal mr-2"></i>
-                  Javascript libraries (familiar with):
-                </strong>
-              </h3>
-
-              <ul className="list-disc pl-8 space-y-2 mb-4">
-                <li className="text-justify">
-                  SPA frameworks/libraries: ReactJs, NextJs (strongly in
-                  function components, performance optimize)
+                  Frontend Development: React, Next.js, Vue.js, TypeScript,
+                  JavaScript
                 </li>
                 <li className="text-justify">
-                  UI frameworks/libraries: Bootstrap, tailwindcss, ant design,
-                  material ui, react-query, react-hook-form, momentjs,
-                  redux-toolkit, i18next ...
+                  Backend Integration: NestJS, Prisma, TypeORM, PostgreSQL
+                </li>
+                <li className="text-justify">
+                  DevOps & Deployment: AWS, Docker, Git, CI/CD pipelines
+                </li>
+                <li className="text-justify">
+                  Testing & Quality: Jest, Vitest, Storybook, SonarQube
+                </li>
+                <li className="text-justify">
+                  Build Tools: Nx Workspace, Webpack, Vite
+                </li>
+                <li className="text-justify">
+                  UI/UX: Tailwind CSS, CSS3, HTML5, Figma
                 </li>
               </ul>
             </section>
@@ -161,13 +160,55 @@ export const MyCV = () => {
               <h3 className="mb-2">
                 <strong>
                   <i className="fa-solid fa-circle-check text-deep-teal mr-2"></i>
-                  Other things:
-                  <span className="text-base font-normal">
-                    Source control with git, Agile-Scrum working flow,
-                    bitbucket, Opsgenie, figma ...
-                  </span>
+                  JavaScript Expertise:
                 </strong>
               </h3>
+              <ul className="list-disc pl-8 space-y-2 mb-4">
+                <li className="text-justify">
+                  Advanced scope and closure management
+                </li>
+                <li className="text-justify">
+                  Module patterns and architecture design
+                </li>
+                <li className="text-justify">
+                  Prototypal inheritance and OOP concepts
+                </li>
+                <li className="text-justify">
+                  Asynchronous programming (Promises, async/await)
+                </li>
+                <li className="text-justify">
+                  TypeScript type system and advanced features
+                </li>
+                <li className="text-justify">
+                  Performance optimization techniques
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="mb-2">
+                <strong>
+                  <i className="fa-solid fa-circle-check text-deep-teal mr-2"></i>
+                  Framework & Library Proficiency:
+                </strong>
+              </h3>
+              <ul className="list-disc pl-8 space-y-2 mb-4">
+                <li className="text-justify">
+                  React ecosystem: Hooks, Context, Redux Toolkit, React Query
+                </li>
+                <li className="text-justify">
+                  Next.js: SSR, SSG, ISR, API Routes, Middleware
+                </li>
+                <li className="text-justify">
+                  UI Libraries: Material UI, Ant Design, Tailwind CSS
+                </li>
+                <li className="text-justify">
+                  Form Management: React Hook Form
+                </li>
+                <li className="text-justify">
+                  State Management: Redux Toolkit
+                </li>
+              </ul>
             </section>
           </section>
 
@@ -185,51 +226,57 @@ export const MyCV = () => {
             </h2>
 
             <div className="mb-4 border-b border-gray-200 pb-4">
-              <h3 className="mb-2">Front End Developer / Mona Software</h3>
+              <h3 className="mb-2">Front End Developer / GMO Runsystem</h3>
               <div className="flex items-center text-deep-teal mb-4">
                 <i className="fa-solid fa-calendar-days mr-4"></i>
-                Sep 2022 -{' '}
+                Apr 2023 -{' '}
                 <span className="bg-deep-teal text-white rounded px-2 ml-2 leading-6">
                   Current
                 </span>
               </div>
               <p className="mb-4 text-justify">
-                Join outsourcing projects. Almostly, build ERP web apps.
+                Working on Japanese banking domain projects with a focus on high
+                code quality and maintainability. Implementing atomic design
+                principles and strict code quality configurations.
               </p>
               <p className="text-justify">
-                Libraries/frameworks used: Nextjs, tailwindcss, ant design,
-                marterial-ui, react-hook-form ...
+                Technologies used: Next.js, React.js, Vue 2, TypeScript, ESLint,
+                Prettier, Jest, SonarQube
               </p>
             </div>
 
-            <section className="mb-4 border-b border-gray-200 pb-4">
+            <div className="mb-4 border-b border-gray-200 pb-4">
+              <h3 className="mb-2">Front End Developer / Mona Software</h3>
+              <div className="flex items-center text-deep-teal mb-4">
+                <i className="fa-solid fa-calendar-days mr-4"></i>
+                Sep 2022 - Mar 2023
+              </div>
+              <p className="mb-4 text-justify">
+                Developed enterprise resource planning (ERP) web applications
+                for various outsourcing projects. Focused on building responsive
+                and user-friendly interfaces.
+              </p>
+              <p className="text-justify">
+                Technologies used: Next.js, Tailwind CSS, Ant Design,
+                Material-UI, React Hook Form, Redux Toolkit
+              </p>
+            </div>
+
+            <section>
               <h3 className="mb-2">Front End Developer / AKADON</h3>
               <div className="flex items-center text-deep-teal mb-4">
                 <i className="fa-solid fa-calendar-days mr-4"></i>
                 Sep 2020 - Sep 2022
               </div>
               <p className="mb-4 text-justify">
-                Developing company's products, applications for connecting
-                tutors and students. Key features: bidding courses; connect
-                students to tutors by messaging and video call system; manage
-                learning/teaching schedules; support multiple languages; LMS
-                features ...
+                Developed an educational platform connecting tutors and
+                students. Implemented key features including course bidding
+                system, real-time messaging, video calls, learning management
+                system (LMS), and multilingual support.
               </p>
               <p className="text-justify">
-                Libraries/frameworks used: Reactjs, Redux-toolkits, Bootstrap,
-                Twilio, Fullcalendar ...
-              </p>
-            </section>
-
-            <section>
-              <h3 className="mb-2">Front End Intern / Egany</h3>
-              <div className="flex items-center text-deep-teal mb-4">
-                <i className="fa-solid fa-calendar-days mr-4"></i>
-                Dec 2019 - May 2020
-              </div>
-              <p className="text-justify">
-                Build landing pages base on ecommerce flatform like Haravan and
-                Shopify using html, css, javascript, liquid.
+                Technologies used: React.js, Redux Toolkit, Bootstrap, Twilio,
+                FullCalendar, i18n
               </p>
             </section>
           </section>
@@ -240,7 +287,7 @@ export const MyCV = () => {
       <div className="fixed bottom-4 inset-x-0">
         <div className="max-w-[1366px] flex justify-end mx-auto px-4">
           <Link
-            href="./Dong-Thach-CV.pdf"
+            href="./Dong.T-CV.pdf"
             target="_blank"
             className="text-2xl text-deep-teal animate-bounce"
           >

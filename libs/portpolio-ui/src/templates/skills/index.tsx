@@ -30,6 +30,11 @@ const skills = [
     blogLink: '/blog/vuejs',
   },
   {
+    name: 'NestJS',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg',
+    blogLink: '/blog/nestjs',
+  },
+  {
     name: 'Vite, Webpack',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg',
     blogLink: '/blog/vite-webpack',
@@ -53,6 +58,11 @@ const skills = [
     name: 'Prisma',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg',
     blogLink: '/blog/prisma',
+  },
+  {
+    name: 'TypeORM',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typeorm/typeorm-plain.svg',
+    blogLink: '/blog/typeorm',
   },
   {
     name: 'Nx Workspace',
@@ -118,10 +128,7 @@ const skills = [
 
 export const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="min-h-screen bg-dark-jungle flex items-center justify-center"
-    >
+    <section className="min-h-screen bg-dark-jungle flex items-center justify-center">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-burnt-orange mb-12 text-center"
