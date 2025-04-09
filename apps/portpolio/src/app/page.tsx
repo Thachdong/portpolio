@@ -2,9 +2,13 @@
 
 import { Header, AboutMe, Skills, Projects, ContactMe } from '@/portpolio-ui';
 import { motion } from 'framer-motion';
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 
 export default function Index() {
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+
   const sectionVariants = useMemo(
     () => ({
       hidden: { opacity: 0, scale: 0, y: 0 },
@@ -13,13 +17,11 @@ export default function Index() {
         scale: 1,
         y: 64,
         transition: {
-          duration: 0.5,
+          duration: 1,
           ease: [0, 0.71, 0.2, 1.01],
           scale: {
-            type: 'tween',
-            duration: 0.8,
+            type: 'spring',
             ease: 'easeOut',
-            bounce: 0.25,
           },
         },
       },
@@ -28,16 +30,32 @@ export default function Index() {
   );
 
   const onViewportEnter = useCallback((id: string) => {
-    if (window.innerWidth >= 768) {
-      const timeoutId = setTimeout(() => {
-        document.querySelector(id)?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-        });
-      }, 500);
+    let scrollPosition = 0;
 
-      return () => clearTimeout(timeoutId);
+    switch (id) {
+      case '#about':
+        scrollPosition = 0;
+        break;
+      case '#skills':
+        scrollPosition = aboutRef.current?.offsetHeight || 0;
+        break;
+      case '#projects':
+        scrollPosition =
+          (aboutRef.current?.offsetHeight || 0) +
+          (skillsRef.current?.offsetHeight || 0);
+        break;
+      case '#contact-me':
+        scrollPosition =
+          (aboutRef.current?.offsetHeight || 0) +
+          (skillsRef.current?.offsetHeight || 0) +
+          (projectsRef.current?.offsetHeight || 0);
+        break;
     }
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: 'smooth',
+    });
   }, []);
 
   return (
@@ -50,14 +68,15 @@ export default function Index() {
 
       <div>
         <motion.div
-          className="max-w-screen-xl mx-auto pt-16"
+          ref={aboutRef}
           id="about"
+          className="max-w-screen-xl mx-auto"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{
             once: false,
-            amount: 0,
+            amount: 0.15,
           }}
           onViewportEnter={() => {
             onViewportEnter('#about');
@@ -67,14 +86,15 @@ export default function Index() {
         </motion.div>
 
         <motion.div
-          className="max-w-screen-xl mx-auto pt-16"
+          ref={skillsRef}
           id="skills"
+          className="max-w-screen-xl mx-auto"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{
             once: false,
-            amount: 0,
+            amount: 0.15,
           }}
           onViewportEnter={() => {
             onViewportEnter('#skills');
@@ -84,14 +104,15 @@ export default function Index() {
         </motion.div>
 
         <motion.div
-          className="max-w-screen-xl mx-auto pt-16"
+          ref={projectsRef}
           id="projects"
+          className="max-w-screen-xl mx-auto"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{
             once: false,
-            amount: 0,
+            amount: 0.15,
           }}
           onViewportEnter={() => {
             onViewportEnter('#projects');
@@ -101,14 +122,14 @@ export default function Index() {
         </motion.div>
 
         <motion.div
-          className="max-w-screen-xl mx-auto pt-16"
           id="contact-me"
+          className="max-w-screen-xl mx-auto"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{
             once: false,
-            amount: 0,
+            amount: 0.15,
           }}
           onViewportEnter={() => {
             onViewportEnter('#contact-me');

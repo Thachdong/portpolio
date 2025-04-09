@@ -5,10 +5,7 @@ import Image from 'next/image';
 
 export const AboutMe = () => {
   return (
-    <section
-      id="about"
-      className="min-h-screen bg-dark-jungle flex items-center justify-center"
-    >
+    <section className="min-h-screen bg-dark-jungle flex items-center justify-center">
       <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12">
         <motion.div
           className="md:w-1/2"

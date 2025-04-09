@@ -4,10 +4,7 @@ import Link from 'next/link';
 
 export const ContactMe: React.FC = () => {
   return (
-    <section
-      id="contact-me"
-      className="min-h-screen bg-dark-jungle flex items-center justify-center py-20"
-    >
+    <section className="min-h-screen bg-dark-jungle flex items-center justify-center py-20">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-burnt-orange mb-12 text-center"

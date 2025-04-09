@@ -13,6 +13,7 @@ export const Projects = () => {
         'AWS',
         'Nx Workspace',
         'Tailwind CSS',
+        'Framer Motion',
       ],
       features: [
         'Micro-frontend architecture with 3 apps: Portfolio, Blog, Blog Admin',
@@ -21,29 +22,59 @@ export const Projects = () => {
         'Cloud deployment on AWS',
         'Monorepo management with Nx',
       ],
-      link: 'https://github.com/dongthach/portfolio-blog-platform',
+      link: 'https://github.com/Thachdong/portpolio',
     },
     {
-      title: 'E-commerce Platform',
+      title: 'Shopping Cart',
       description:
-        'A micro-frontend e-commerce solution with separate fashion store and admin dashboard applications.',
-      techStack: ['React', 'Module Federation', 'Redux', 'Node.js', 'MongoDB'],
-      features: [
-        'Micro-frontend architecture using Module Federation',
-        'Responsive fashion store frontend',
-        'Admin dashboard for inventory management',
-        'State management with Redux',
-        'RESTful API integration',
+        'A comprehensive e-commerce platform built with Next.js, featuring both client-facing storefront and admin dashboard. Implements industry best practices including authentication, testing, and CI/CD.',
+      techStack: [
+        'Next.js',
+        'Prisma',
+        'PostgreSQL',
+        'NextAuth.js',
+        'Husky',
+        'Storybook',
+        'AWS S3',
       ],
-      link: 'https://github.com/dongthach/ecommerce-platform',
+      features: [
+        'Full-featured shopping cart and checkout flow',
+        'User authentication and account management',
+        'Product catalog with search and filtering',
+        'Admin dashboard for inventory and order management',
+        'Image upload and storage with S3',
+        'Component documentation with Storybook',
+        'Git hooks and automated testing',
+      ],
+      link: 'https://github.com/Thachdong/shopping-cart-1',
+    },
+    {
+      title: 'Games Platform',
+      description:
+        'A real-time gaming platform inspired by lichess.org, focused on the game "Caro" with a scalable architecture to easily add more games. Features comprehensive gameplay, tournament management, and social features.',
+      techStack: [
+        'React.js',
+        'NestJS',
+        'PostgreSQL',
+        'TypeORM',
+        'Module Federation',
+        'AWS',
+      ],
+      features: [
+        'Game creation and tournament management',
+        'Real-time gameplay with scoring system',
+        'Tournament rankings and leaderboards',
+        'Game history review functionality',
+        'Public and in-game chat rooms',
+        'Real-time game listing for player matching',
+        'Scalable architecture for multiple games',
+      ],
+      link: 'https://github.com/Thachdong/my-games',
     },
   ];
 
   return (
-    <section
-      id="projects"
-      className="min-h-screen bg-dark-jungle flex items-center justify-center py-20 mt-[15%]"
-    >
+    <section className="min-h-screen bg-dark-jungle flex items-center justify-center">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-burnt-orange mb-12 text-center"
