@@ -1,22 +1,22 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { MotionDiv, MotionH2 } from '../../atoms';
 
 export const ContactMe: React.FC = () => {
   return (
     <section className="min-h-screen bg-dark-jungle flex items-center justify-center py-20">
       <div className="container mx-auto px-4">
-        <motion.h2
+        <MotionH2
           className="text-4xl font-bold text-burnt-orange mb-12 text-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           Contact Me
-        </motion.h2>
+        </MotionH2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <motion.div
+          <MotionDiv
             className="bg-deep-teal p-6 rounded-lg"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -40,9 +40,9 @@ export const ContactMe: React.FC = () => {
                 <span className="font-medium">Phone:</span> (+84) 35.386.0797
               </a>
             </div>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             className="bg-deep-teal p-6 rounded-lg"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -69,7 +69,7 @@ export const ContactMe: React.FC = () => {
                 data-height="300"
               />
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
     </section>

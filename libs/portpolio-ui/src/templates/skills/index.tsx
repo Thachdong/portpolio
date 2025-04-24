@@ -1,146 +1,23 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { MotionDiv, MotionH2 } from '../../atoms';
+import { getPortpolioSkillsService } from '@/database';
 
-const skills = [
-  {
-    name: 'JavaScript',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-    blogLink: '/blog/javascript',
-  },
-  {
-    name: 'TypeScript',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-    blogLink: '/blog/typescript',
-  },
-  {
-    name: 'React',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-    blogLink: '/blog/react',
-  },
-  {
-    name: 'Next.js',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-    blogLink: '/blog/nextjs',
-  },
-  {
-    name: 'Vue.js',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-    blogLink: '/blog/vuejs',
-  },
-  {
-    name: 'NestJS',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg',
-    blogLink: '/blog/nestjs',
-  },
-  {
-    name: 'Vite, Webpack',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg',
-    blogLink: '/blog/vite-webpack',
-  },
-  {
-    name: 'Module Federation',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg',
-    blogLink: '/blog/module-federation',
-  },
-  {
-    name: 'Nextjs Multi Zone',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-    blogLink: '/blog/nextjs-multi-zone',
-  },
-  {
-    name: 'Postgres',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-    blogLink: '/blog/postgres',
-  },
-  {
-    name: 'Prisma',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg',
-    blogLink: '/blog/prisma',
-  },
-  {
-    name: 'TypeORM',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typeorm/typeorm-plain.svg',
-    blogLink: '/blog/typeorm',
-  },
-  {
-    name: 'Nx Workspace',
-    icon: 'https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png',
-    blogLink: '/blog/nx-workspace',
-  },
-  {
-    name: 'Jest, Vitest',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg',
-    blogLink: '/blog/jest-vitest',
-  },
-  {
-    name: 'AWS',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png',
-    blogLink: '/blog/aws',
-  },
-  {
-    name: 'Docker',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-    blogLink: '/blog/docker',
-  },
-  {
-    name: 'Storybook',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg',
-    blogLink: '/blog/storybook',
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
-    blogLink: '/blog/tailwind-css',
-  },
-  {
-    name: 'CSS3',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-    blogLink: '/blog/css3',
-  },
-  {
-    name: 'HTML5',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-    blogLink: '/blog/html5',
-  },
-  {
-    name: 'Git',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-    blogLink: '/blog/git',
-  },
-  {
-    name: 'SonarQube',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sonarqube/sonarqube-original.svg',
-    blogLink: '/blog/sonarqube',
-  },
-  {
-    name: 'Jira',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg',
-    blogLink: '/blog/jira',
-  },
-  {
-    name: 'Figma',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
-    blogLink: '/blog/figma',
-  },
-];
-
-export const Skills = () => {
+export async function Skills() {
+  const skills = await getPortpolioSkillsService();
   return (
     <section className="min-h-screen bg-dark-jungle flex items-center justify-center">
       <div className="container mx-auto px-4">
-        <motion.h2
+        <MotionH2
           className="text-4xl font-bold text-burnt-orange mb-12 text-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           Skills & Technologies
-        </motion.h2>
+        </MotionH2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          {skills.map((skill, index) => (
-            <motion.div
+          {skills?.map((skill, index) => (
+            <MotionDiv
               key={skill.name}
               className="bg-deep-teal p-4 rounded-lg flex flex-col items-center justify-center gap-3 cursor-pointer relative group"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -162,7 +39,7 @@ export const Skills = () => {
               </div>
 
               {skill.blogLink && (
-                <motion.div
+                <MotionDiv
                   className="absolute inset-0 bg-black bg-opacity-80 rounded-lg flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   initial={false}
                 >
@@ -177,12 +54,12 @@ export const Skills = () => {
                   >
                     Read Blog
                   </Link>
-                </motion.div>
+                </MotionDiv>
               )}
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
       </div>
     </section>
   );
-};
+}
