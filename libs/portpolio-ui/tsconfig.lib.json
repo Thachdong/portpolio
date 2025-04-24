@@ -13,5 +13,8 @@
     "declaration": true
   },
   "exclude": ["../../libs/storybook/src/.storybook/**/*"],
-  "include": ["../../libs/base-ui/src/index.ts"]
+  "include": [
+    "../../libs/base-ui/src/index.ts",
+    "../../libs/database/src/index.ts"
+  ]
 }

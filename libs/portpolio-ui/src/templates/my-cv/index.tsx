@@ -21,6 +21,8 @@ export const MyCV = () => {
               width={300}
               height={300}
               className="w-[55%] mx-auto"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <h2 className="absolute bottom-4 mx-4 text-deep-teal text-2xl font-bold">
               Thach Dong

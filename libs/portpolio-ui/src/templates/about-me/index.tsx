@@ -1,13 +1,11 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { MotionDiv } from '../../atoms';
 
 export const AboutMe = () => {
   return (
     <section className="min-h-screen bg-dark-jungle flex items-center justify-center">
       <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12">
-        <motion.div
+        <MotionDiv
           className="md:w-1/2"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -44,9 +42,9 @@ export const AboutMe = () => {
               </p>
             </div>
           </div>
-        </motion.div>
+        </MotionDiv>
 
-        <motion.div
+        <MotionDiv
           className="md:w-1/2 flex justify-center"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -59,9 +57,11 @@ export const AboutMe = () => {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              quality={100}
             />
           </div>
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
   );
