@@ -8,10 +8,10 @@ import {
 } from '@aws-sdk/client-s3';
 
 const s3ClientConfig: S3ClientConfig = {
-  region: process.env.AWS_S3_REGION,
+  region: process.env.STORAGE_REGION,
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY as string,
-    secretAccessKey: process.env.AWS_SECRET_KEY as string,
+    accessKeyId: process.env.STORAGE_ACCESS_KEY as string,
+    secretAccessKey: process.env.STORAGE_SECRET_KEY as string,
   },
 };
 
@@ -26,7 +26,7 @@ export async function uploadFile(
   const buffer = Buffer.from(arrayBuffer);
 
   const command = new PutObjectCommand({
-    Bucket: process.env.AWS_S3_BUCKET_NAME,
+    Bucket: process.env.STORAGE_BUCKET_NAME,
     Key: `${folder}/${filename}`,
     Body: buffer,
   });
@@ -38,7 +38,7 @@ export async function getMdFileContent(
   filename: string
 ): Promise<string | undefined> {
   const command = new GetObjectCommand({
-    Bucket: process.env.AWS_S3_BUCKET_NAME,
+    Bucket: process.env.STORAGE_BUCKET_NAME,
     Key: [ES3Folder.POSTS, filename].join('/'),
   });
 
