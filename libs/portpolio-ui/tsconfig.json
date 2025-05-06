@@ -14,5 +14,5 @@
     }
   ],
   "extends": "../../tsconfig.base.json",
-  "exclude": ["**/.storybook/**/*"]
+  "exclude": ["**/.storybook/**/*", "../../utility/src/**/*"]
 }

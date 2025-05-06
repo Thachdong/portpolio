@@ -17,17 +17,16 @@ export const PageAnimation: React.FC<TPageAnimationProps> = ({
 }) => {
   const sectionVariants = useMemo(
     () => ({
-      hidden: { opacity: 0, scale: 0, y: 0 },
+      hidden: { opacity: 0, scale: 0.125, y: 54 },
       visible: {
         opacity: 1,
         scale: 1,
-        y: 64,
         transition: {
           duration: 1,
-          ease: [0, 0.71, 0.2, 1.01],
+          ease: [0, 0.71, 0.2, 1],
           scale: {
-            type: 'spring',
             ease: 'easeOut',
+            duration: 0.5,
           },
         },
       },
@@ -36,20 +35,22 @@ export const PageAnimation: React.FC<TPageAnimationProps> = ({
   );
 
   const onViewportEnter = useCallback(() => {
-    callback(`#${id}`);
+    setTimeout(() => {
+      callback(id);
+    }, 500);
   }, [callback, id]);
 
   return (
     <MotionDiv
       ref={ref}
       id={id}
-      className="max-w-screen-xl mx-auto"
+      className="max-w-screen-xl mx-auto py-4 md:py-12"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{
         once: false,
-        amount: 0.15,
+        amount: 0,
       }}
       onViewportEnter={onViewportEnter}
     >
