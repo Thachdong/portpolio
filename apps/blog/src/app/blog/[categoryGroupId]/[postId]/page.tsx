@@ -9,6 +9,11 @@ import {
 import { compileMDX } from 'next-mdx-remote/rsc';
 import { markdownComponents } from '@/utility';
 
+export const metadata = {
+  title: "Dongt's Blog | Post",
+  description: "Dongt's Blog | Post",
+};
+
 type TPostDetailProps = {
   params: Promise<{
     postId: string;

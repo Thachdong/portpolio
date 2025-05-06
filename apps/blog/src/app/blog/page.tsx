@@ -5,6 +5,11 @@ import {
   TAdminPost,
 } from '@/database';
 
+export const metadata = {
+  title: "Dongt's Blog | Home",
+  description: "Welcome to Dongt's Blog",
+};
+
 type TBlogPageProps = {
   searchParams: Promise<{ search?: string }>;
 };

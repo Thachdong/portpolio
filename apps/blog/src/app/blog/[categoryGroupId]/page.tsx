@@ -1,6 +1,11 @@
 import { Breadcrumb, CategoryPosts } from '@/blog-ui';
 import { getCategoryGroupByIdService } from '@/database';
 
+export const metadata = {
+  title: "Dongt's Blog | Category",
+  description: "Dongt's Blog | Category",
+};
+
 type TCategoryDetailProps = {
   params: Promise<{
     categoryGroupId: string;
