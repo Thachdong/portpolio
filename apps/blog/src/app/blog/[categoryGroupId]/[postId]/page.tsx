@@ -10,10 +10,10 @@ import { compileMDX } from 'next-mdx-remote/rsc';
 import { markdownComponents } from '@/utility';
 
 type TPostDetailProps = {
-  params: {
+  params: Promise<{
     postId: string;
     categoryId: string;
-  };
+  }>;
 };
 
 const CLASSNAMES = {

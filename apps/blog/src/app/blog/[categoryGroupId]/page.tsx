@@ -2,9 +2,9 @@ import { Breadcrumb, CategoryPosts } from '@/blog-ui';
 import { getCategoryGroupByIdService } from '@/database';
 
 type TCategoryDetailProps = {
-  params: {
+  params: Promise<{
     categoryGroupId: string;
-  };
+  }>;
 };
 
 const CLASSNAMES = {

@@ -6,13 +6,13 @@ import {
 } from '@/database';
 
 type TBlogPageProps = {
-  searchParams: { search?: string };
+  searchParams: Promise<{ search?: string }>;
 };
 
 export default async function BlogPage({
   searchParams,
 }: Readonly<TBlogPageProps>) {
-  const search = await searchParams.search;
+  const search = (await searchParams).search;
 
   let searchPosts: TAdminPost[] = [];
 

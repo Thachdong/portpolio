@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { SearchBox } from '../../molecules';
 
 const CLASSNAMES = {
@@ -16,7 +16,11 @@ export const BlogHeader: React.FC = () => {
       <div className={CLASSNAMES.container}>
         <h1 className={CLASSNAMES.logo}>Dong.T</h1>
         <div className={CLASSNAMES.searchBox}>
-          <SearchBox />
+          <Suspense
+            fallback={<div className="w-full h-10 bg-gray-200 animate-pulse" />}
+          >
+            <SearchBox />
+          </Suspense>
         </div>
       </div>
     </div>

@@ -110,10 +110,7 @@ export const HeaderDesktop: React.FC<THeaderDesktopProps> = ({
       </li>
 
       <li>
-        <Link
-          href="/blog"
-          className="py-2 inline-block font-medium text-gray-300"
-        >
+        <a href="/blog" className="py-2 inline-block font-medium text-gray-300">
           <motion.span
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -121,7 +118,7 @@ export const HeaderDesktop: React.FC<THeaderDesktopProps> = ({
           >
             Blog
           </motion.span>
-        </Link>
+        </a>
       </li>
 
       <li className="flex-grow"></li>

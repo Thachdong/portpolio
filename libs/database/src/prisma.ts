@@ -1,5 +1,11 @@
 import { PrismaClient } from '@prisma/client';
 
+type TGlobal = Global & {
+  prisma: PrismaClient | undefined;
+};
+
+declare const global: TGlobal;
+
 let prisma: PrismaClient;
 
 if (process.env.NODE_ENV === 'production') {

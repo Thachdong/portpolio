@@ -1,8 +1,6 @@
+import { emmiter } from './../../../../libs/sse';
 import { TMessage } from '@/database';
-import { EventEmitter } from 'events';
 import { NextRequest } from 'next/server';
-
-export const emmiter = new EventEmitter();
 
 export async function GET(req: NextRequest) {
   const postId = req.nextUrl.searchParams.get('postId');

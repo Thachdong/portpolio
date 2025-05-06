@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { emmiter } from '../stream/route';
+import { emmiter } from '../../../../libs/sse';
 import { createCommentService } from '@/database';
 
 export async function POST(req: NextRequest) {

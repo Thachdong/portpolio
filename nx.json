@@ -114,6 +114,13 @@
       "cache": true
     }
   },
+  "target": {
+    "build": {
+      "executor": "@nx/nx:build",
+      "dependsOn": ["^build"],
+      "outputs": ["{workspaceRoot}/dist/packages/{project}"]
+    }
+  },
   "generators": {
     "@nx/react": {
       "application": {
