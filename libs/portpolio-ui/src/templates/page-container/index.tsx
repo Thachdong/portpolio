@@ -19,21 +19,28 @@ export const PageContainer: React.FC<TPageContainerProps> = ({
   const contactMeRef = useRef<HTMLDivElement>(null);
 
   const onViewportEnter = useCallback((id: string) => {
+    // Check if the current hash matches the ID of the element
+    // Ignore scroll into view
+    const hash = window.location.hash.slice(1);
+
+    if (hash !== id && id !== 'contact-me') return;
+
     let scrollPosition = 0;
 
+    // Calculate the scroll position based on the ID
     switch (id) {
-      case '#about':
+      case 'about':
         scrollPosition = 0;
         break;
-      case '#skills':
+      case 'skills':
         scrollPosition = aboutRef.current?.offsetHeight || 0;
         break;
-      case '#projects':
+      case 'projects':
         scrollPosition =
           (aboutRef.current?.offsetHeight || 0) +
           (skillsRef.current?.offsetHeight || 0);
         break;
-      case '#contact-me':
+      case 'contact-me':
         scrollPosition =
           (aboutRef.current?.offsetHeight || 0) +
           (skillsRef.current?.offsetHeight || 0) +

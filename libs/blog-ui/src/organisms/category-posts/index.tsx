@@ -35,6 +35,12 @@ export async function CategoryPosts({
           />
         ))}
       </ul>
+
+      {categoryDetail.posts.length === 0 && (
+        <p className="text-center text-gray-500">
+          No posts available in this category.
+        </p>
+      )}
     </div>
   );
 }

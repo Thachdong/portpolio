@@ -1,4 +1,4 @@
-import { markdownComponents } from '@my-portpolio/utilities';
+import { markdownComponents } from '@/utility';
 
 declare global {
   type MDXProvidedComponents = typeof markdownComponents;

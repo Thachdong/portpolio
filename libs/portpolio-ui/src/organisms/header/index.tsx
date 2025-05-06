@@ -3,13 +3,16 @@
 import React, { useState, useEffect } from 'react';
 import { HeaderDesktop } from '../header-desktop';
 import { HeaderMobile } from '../header-mobile';
+import { debounce } from '@/utility';
 
 export const Header: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>('about');
 
   const handleLinkClick = (link: string) => {
     setActiveLink(link);
+
     const element = document.getElementById(link);
+
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -20,11 +23,12 @@ export const Header: React.FC = () => {
   useEffect(() => {
     // Set initial active link from URL hash
     const hash = window.location.hash.slice(1);
+
     if (hash && ['about', 'skills', 'projects'].includes(hash)) {
       setActiveLink(hash);
     }
 
-    const handleScroll = () => {
+    const handleScroll = debounce(() => {
       const sections = ['about', 'skills', 'projects'].map((id) => {
         const element = document.getElementById(id);
 
@@ -46,9 +50,10 @@ export const Header: React.FC = () => {
       setActiveLink(closest.id);
       // Update URL without page reload
       window.history.replaceState({}, '', `#${closest.id}`);
-    };
+    }, 100); // Adjust debounce delay as needed
 
     window.addEventListener('scroll', handleScroll);
+
     handleScroll(); // Initial check
 
     return () => window.removeEventListener('scroll', handleScroll);

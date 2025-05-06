@@ -5,14 +5,19 @@ import {
   TAdminPost,
 } from '@/database';
 
+export const metadata = {
+  title: "Dongt's Blog | Home",
+  description: "Welcome to Dongt's Blog",
+};
+
 type TBlogPageProps = {
-  searchParams: { search?: string };
+  searchParams: Promise<{ search?: string }>;
 };
 
 export default async function BlogPage({
   searchParams,
 }: Readonly<TBlogPageProps>) {
-  const search = await searchParams.search;
+  const search = (await searchParams).search;
 
   let searchPosts: TAdminPost[] = [];
 
