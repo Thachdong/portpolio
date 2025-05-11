@@ -19,11 +19,20 @@
         "buildTarget": "portpolio:build"
       }
     },
-    "portpolio:serve:prod": {
+    "serve:prod": {
       "executor": "@nx/next:server",
       "options": {
         "port": 3000,
         "buildTarget": "portpolio:build"
+      }
+    },
+    "pm2": {
+      "executor": "nx-pm2-plugin:pm2-executor",
+      "options": {
+        "port": 3000,
+        "command": "portpolio:serve:prod",
+        "name": "portpolio",
+        "envPath": "../../.env"
       }
     }
   }

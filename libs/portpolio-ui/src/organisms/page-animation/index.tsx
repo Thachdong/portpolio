@@ -17,7 +17,7 @@ export const PageAnimation: React.FC<TPageAnimationProps> = ({
 }) => {
   const sectionVariants = useMemo(
     () => ({
-      hidden: { opacity: 0, scale: 0.125, y: 54 },
+      hidden: { opacity: 0, scale: 0.75, y: 54 },
       visible: {
         opacity: 1,
         scale: 1,
