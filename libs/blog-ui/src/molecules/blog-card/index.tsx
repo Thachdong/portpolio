@@ -1,7 +1,5 @@
 import React from 'react';
 
-type TBlogCardProps = {};
-
-export const BlogCard: React.FC<Readonly<TBlogCardProps>> = () => {
+export const BlogCard = () => {
   return <div>Blog cart</div>;
 };

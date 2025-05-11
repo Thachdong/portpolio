@@ -9,6 +9,15 @@
         "config": ".verdaccio/config.yml",
         "storage": "tmp/local-registry/storage"
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/**/*.{ts,tsx,js,jsx}",
+          "libs/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
     }
   }
 }
