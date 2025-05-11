@@ -10,10 +10,12 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
+    "jsx": "react-jsx",
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/base-ui": ["libs/base-ui/src/index.ts"],
       "@/blog-admin-ui": ["libs/blog-admin-ui/src/index.ts"],

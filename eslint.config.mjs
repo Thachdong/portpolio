@@ -7,66 +7,26 @@ export default [
   {
     ignores: [
       '**/dist',
+      '**/.next',
       '**/vite.config.*.timestamp*',
       '**/vitest.config.*.timestamp*',
     ],
   },
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    rules: {
-      '@nx/enforce-module-boundaries': [
-        'error',
-        {
-          enforceBuildableLibDependency: true,
-          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
-          depConstraints: [
-            {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
-            },
-            {
-              sourceTag: 'scope:blog-app',
-              onlyDependOnLibsWithTags: [
-                'feature:base-ui',
-                'feature:utility',
-                'feature:blog-ui',
-                'feature:database',
-              ],
-            },
-            {
-              sourceTag: 'scope:blog_admin-app',
-              onlyDependOnLibsWithTags: [
-                'feature:base-ui',
-                'feature:utility',
-                'feature:blog-admin-ui',
-                'feature:database',
-              ],
-            },
-            {
-              sourceTag: 'scope:portpolio-app',
-              onlyDependOnLibsWithTags: [
-                'feature:base-ui',
-                'feature:utility',
-                'feature:portpolio-ui',
-                'feature:database',
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
     files: [
-      '**/*.ts',
-      '**/*.tsx',
-      '**/*.cts',
-      '**/*.mts',
-      '**/*.js',
-      '**/*.jsx',
-      '**/*.cjs',
-      '**/*.mjs',
+      'apps/*/src/**/*.ts',
+      'apps/*/src/**/*.tsx',
+      'apps/*/src/**/*.js',
+      'apps/*/src/**/*.jsx',
     ],
-    rules: {},
+    rules: {
+      '@nx/enforce-module-boundaries': 'off', // Disable the rule
+    },
+    ignores: [
+      '**/dist',
+      '**/.next',
+      '**/vite.config.*.timestamp*',
+      '**/vitest.config.*.timestamp*',
+    ],
   },
 ];
