@@ -5,7 +5,8 @@ type TSidebarMenuProps = {
 };
 
 const CLASSNAMES = {
-  container: 'border-r border-gray-300 overflow-auto hide-scroll-bar p-6',
+  container:
+    'border-r border-gray-300 overflow-auto hide-scroll-bar p-6 hidden md:block',
   groupContainer: 'mb-6 last:mb-0',
   groupHeader:
     'inline-block font-bold text-dark-jungle border-b-2 border-deep-teal mb-3',
@@ -18,10 +19,7 @@ export async function SidebarMenu({
   categoryGroups,
 }: Readonly<TSidebarMenuProps>) {
   return (
-    <ul
-      className={CLASSNAMES.container}
-      style={{ height: 'calc(100vh - 74px)' }}
-    >
+    <ul className={CLASSNAMES.container}>
       {categoryGroups.map((group) => (
         <li className={CLASSNAMES.groupContainer} key={group.id}>
           <span className={CLASSNAMES.groupHeader}>{group.name}</span>

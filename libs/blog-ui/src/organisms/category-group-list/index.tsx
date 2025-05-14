@@ -14,8 +14,8 @@ const CLASSNAMES = {
   header:
     'flex justify-between items-center mb-6 pb-2 border-b-2 border-deep-teal',
   headerLink:
-    'text-deep-teal hover:text-burnt-orange transition-colors font-medium',
-  headerText: 'font-bold text-xl text-dark-jungle',
+    'text-deep-teal hover:text-burnt-orange transition-colors font-medium text-sm sm:text-base w-[56px] sm:w-[64px]',
+  headerText: 'font-bold text-base sm:text-xl text-dark-jungle',
   searchContainer: 'p-6 bg-soft-cream rounded-lg shadow-sm',
   searchList:
     'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6',
@@ -57,7 +57,7 @@ export async function CategoryGroupList({
   }
 
   return (
-    <ul className={CLASSNAMES.container}>
+    <ul className={[CLASSNAMES.container, 'overflow-y-auto'].join(' ')}>
       {categoryGroups.map((group) => {
         return group.categories.map((category) => {
           return (
