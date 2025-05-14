@@ -8,7 +8,7 @@ import {
 } from '@aws-sdk/client-s3';
 
 const s3ClientConfig: S3ClientConfig = {
-  region: process.env.STORAGE_REGION,
+  region: process.env.STORAGE_REGION, // Default to a valid region if undefined
   credentials: {
     accessKeyId: process.env.STORAGE_ACCESS_KEY as string,
     secretAccessKey: process.env.STORAGE_SECRET_KEY as string,
