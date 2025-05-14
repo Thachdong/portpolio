@@ -13,9 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="grid grid-rows-[74px,1fr] min-h-screen bg-gray-300">
+      <body className="grid grid-rows-[74px,1fr] h-screen bg-gray-300">
         <BlogHeader />
-        <section className="w-full max-w-[1366px] mx-auto bg-white px-4">
+        <section className="w-full max-w-[1366px] mx-auto bg-white">
           {children}
         </section>
       </body>

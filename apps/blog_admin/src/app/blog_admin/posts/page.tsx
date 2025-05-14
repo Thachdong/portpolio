@@ -6,7 +6,9 @@ export default async function PostsPage({
 }: {
   searchParams: { page?: string };
 }) {
-  const page = searchParams.page ? parseInt(searchParams.page) : 1;
+  const params = await searchParams;
+
+  const page = params.page ? parseInt(params.page) : 1;
 
   const pagination = await getPostsPaginatedService({ page });
 

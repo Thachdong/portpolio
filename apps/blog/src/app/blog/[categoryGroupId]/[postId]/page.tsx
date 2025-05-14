@@ -22,8 +22,10 @@ type TPostDetailProps = {
 };
 
 const CLASSNAMES = {
-  container: 'grid grid-cols-[1fr,275px] gap-x-4 h-full',
+  container:
+    'grid md:grid-cols-[1fr,275px] grid-cols-[1fr] gap-x-4 h-full px-4',
   content: 'flex flex-col gap-y-4',
+  sidebar: 'md:block hidden',
 };
 
 export default async function PostDetailPage({
@@ -85,10 +87,12 @@ export default async function PostDetailPage({
         <PostComments postId={postId} currentComments={comments} />
       </div>
 
-      <SameCategoryPosts
-        category={post?.category.id || ''}
-        posts={sameCategoryPosts}
-      />
+      <div className={CLASSNAMES.sidebar}>
+        <SameCategoryPosts
+          category={post?.category.id || ''}
+          posts={sameCategoryPosts}
+        />
+      </div>
     </div>
   );
 }

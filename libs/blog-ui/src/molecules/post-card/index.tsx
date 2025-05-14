@@ -11,7 +11,7 @@ type TPostCardProps = {
 const CLASSNAMES = {
   card: 'bg-soft-cream shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-deep-teal',
   title:
-    'text-dark-jungle font-bold py-2 px-4 text-lg hover:text-burnt-orange transition-colors duration-300 truncate border-t border-deep-teal',
+    'text-dark-jungle font-bold py-2 px-4 md:text-lg text-base hover:text-burnt-orange transition-colors duration-300 truncate border-t border-deep-teal',
   imageContainer: 'flex justify-center items-center w-full h-48 bg-white',
   image:
     'max-w-full max-h-full object-cover hover:scale-105 transition-transform duration-300',

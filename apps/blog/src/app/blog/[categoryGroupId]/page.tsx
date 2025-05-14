@@ -13,6 +13,7 @@ type TCategoryDetailProps = {
 };
 
 const CLASSNAMES = {
+  container: 'px-4',
   list: 'flex flex-col gap-4 mb-8',
 };
 
@@ -24,7 +25,7 @@ export default async function CategoryDetailPage({
   const categoryGroup = await getCategoryGroupByIdService(categoryGroupId);
 
   return (
-    <>
+    <div className={CLASSNAMES.container}>
       <Breadcrumb
         items={[
           { title: 'Home', id: 'home', href: `/blog#${categoryGroup.id}` },
@@ -37,6 +38,6 @@ export default async function CategoryDetailPage({
           <CategoryPosts key={category.id} categoryId={category.id} />
         ))}
       </ul>
-    </>
+    </div>
   );
 }
